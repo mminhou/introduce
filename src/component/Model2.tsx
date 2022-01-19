@@ -85,4 +85,4 @@ export default function Model2() {
   )
 };
 
-useGLTF.preload('/shibainu.glb');
+useGLTF.preload(require('../assets/shibainu.glb'));

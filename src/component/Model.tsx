@@ -38,4 +38,4 @@ export default function Model() {
   )
 };
 
-useGLTF.preload('/shibainu_posed.glb')
+useGLTF.preload(require('../assets/shibainu_posed.glb'));
