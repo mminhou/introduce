@@ -29,6 +29,18 @@ module.exports = {
                 test: /\.(sa|sc|c)ss$/,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },
+            {
+                test: /\.(glb|gltf)$/i,
+                use: [
+                  {
+                      loader: 'file-loader',
+                      options: {
+                          name: '[name].[ext]?[hash]',
+                          outputPath: './assets/',
+                      }
+                  },
+                ],
+            }
         ],
     },
     resolve: {
