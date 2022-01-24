@@ -3,7 +3,7 @@ import {useAnimations, useGLTF} from "@react-three/drei";
 
 export default function Model2() {
   const group = useRef();
-  const {nodes, materials, animations, asset} = useGLTF('./assets/shibainu.glb');
+  const {nodes, materials, animations, asset} = useGLTF('./assets/shibainu.glb') as any;
   const {actions} = useAnimations(animations, group);
   useEffect(() => {
     console.log(actions);
