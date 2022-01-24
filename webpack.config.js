@@ -30,7 +30,7 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },
             {
-                test: /\.(glb|gltf)$/i,
+                test: /\.(glb|gltf|blob)$/i,
                 use: [
                   {
                       loader: 'file-loader',
