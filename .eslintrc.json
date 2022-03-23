@@ -1,0 +1,45 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "plugins": ["@typescript-eslint","prettier"],
+  "extends": [
+    "prettier/react",
+    "plugin:@typescript-eslint/recommended",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "prettier/prettier": ["error"],
+    "no-console": "warn",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-extra-semi": "warn",
+    "@typescript-eslint/no-inferrable-types": "warn",
+    "@typescript-eslint/no-this-alias": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/triple-slash-reference": "warn",
+    "no-prototype-builtins": "warn",
+    "no-async-promise-executor": "warn",
+    "no-redeclare": "warn",
+    "no-self-assign": "warn",
+    "no-unused-vars": "off",
+    "no-var": "warn",
+    "prefer-const": "warn",
+    "prefer-spread": "warn",
+    "react/prop-types": "warn",
+    "no-debugger" : "off"
+  }
+}
