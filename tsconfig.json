@@ -4,6 +4,7 @@
     "module": "esnext",
     "moduleResolution": "node",
     "noResolve": false,
+    "noEmit": true,
     "noImplicitAny": false,
     "removeComments": false,
     "sourceMap": true,
@@ -12,7 +13,10 @@
     "allowSyntheticDefaultImports": true,
     "keyofStringsOnly": true
   },
-  "typeRoots": ["node_modules/@types", "src/@type"],
+  "typeRoots": [
+    "node_modules/@types",
+    "src/@type"
+  ],
   "exclude": [
     "node_modules",
     "build",
@@ -23,5 +27,8 @@
     "src/setupTests.ts",
     "./node_modules/**/*"
   ],
-  "include": ["./src/**/*", "@type"]
+  "include": [
+    "./src/**/*",
+    "@type"
+  ]
 }
