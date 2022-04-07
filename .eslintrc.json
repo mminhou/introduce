@@ -30,6 +30,7 @@
     "@typescript-eslint/no-this-alias": "off",
     "@typescript-eslint/no-unused-vars": "off",
     "@typescript-eslint/triple-slash-reference": "warn",
+    "@typescript-eslint/no-var-requires": "off",
     "no-prototype-builtins": "warn",
     "no-async-promise-executor": "warn",
     "no-redeclare": "warn",
