@@ -61,11 +61,6 @@ module.exports = {
   mode: 'development',
   devServer: {
     port: 9000,
+    hot: true,
   },
-  // devtool: "inline-source-map",
-  // devServer: {
-  //     port: 9000,
-  //     hot: true,
-  //     publicPath: 'index.html',
-  // },
 };
