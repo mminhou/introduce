@@ -5,6 +5,7 @@ const path = require('path');
 
 module.exports = {
   entry: './src/index.tsx',
+  devtool: 'cheap-module-source-map',
   output: {
     filename: 'bundle.js',
     publicPath: '/',
@@ -29,9 +30,8 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
-
       {
-        test: /\.(svg|glb|gltf|blob)$/i,
+        test: /\.(svg|glb|gltf|blob|json)$/i,
         use: [
           {
             loader: 'file-loader',
