@@ -1,6 +1,7 @@
 import { AppBar, makeStyles } from '@material-ui/core';
 import React from 'react';
 import Header from '../component/layout/Header';
+import CanvasContainer from '../component/three/CanvasContainer';
 
 const useStyle = makeStyles((theme) => ({
   mainBackground: {
@@ -20,6 +21,7 @@ const Home = () => {
       <AppBar position='relative' color='transparent' elevation={0}>
         <Header />
       </AppBar>
+      <CanvasContainer />
     </div>
   );
 };
