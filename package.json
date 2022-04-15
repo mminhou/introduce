@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack --mode development",
+    "dev": "webpack-dev-server --host 0.0.0.0 --config ./webpack.config.js",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --hot"
   },
@@ -23,6 +23,7 @@
     "@babel/preset-env": "^7.16.4",
     "@babel/preset-react": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
+    "@types/gsap": "^3.0.0",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "@types/react-redux": "^7.1.22",
@@ -60,7 +61,7 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/styles": "^4.11.4",
     "@react-three/drei": "^8.6.3",
-    "@react-three/fiber": "^7.0.25",
+    "@react-three/fiber": "^7.0.27",
     "convert-excel-to-json": "^1.7.0",
     "gsap": "^3.9.1",
     "react": "^17.0.2",
