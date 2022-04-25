@@ -1,10 +1,22 @@
 import React from 'react';
-import CanvasContainer from "./component/Test2";
+import { Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import rootStore, { RootStore } from './store/configureStore';
+import Home from './pages/Home';
 
-export default function App() {
+const store: RootStore = rootStore();
+
+const App = () => {
   return (
-    <>
-      <CanvasContainer />
-    </>
-  )
+    <div>
+      <Provider store={store}>
+        <Routes>
+          {/* <Route path='/' element={<Login />} /> */}
+          <Route path='/' element={<Home />} />
+        </Routes>
+      </Provider>
+    </div>
+  );
 };
+
+export default App;
