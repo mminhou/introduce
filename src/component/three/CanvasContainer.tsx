@@ -19,8 +19,8 @@ const CanvasContainer = () => {
   return (
     <div className={classes.canvasContainer}>
       <Canvas camera={{ position: [0, 0, 100], up: [0, 1, 0] }}>
-        <fog attach='fog' args={['red', 25, 40]} />
-        <color attach='background' args={['#ffdd41']} />
+        <fog attach='fog' args={['black', 25, 40]} />
+        <color attach='background' args={['#FAFAFA']} />
         <Suspense fallback={<Loader />}>
           <OrbitControls />
           <Light />
