@@ -1,15 +1,16 @@
 import React from 'react';
+import { makeStyles } from '@material-ui/core';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import { Suspense } from 'react';
 import Light from './Light';
 import Loader from './Loader';
 import Text3d from './Text';
-import { makeStyles } from '@material-ui/core';
+import { theme } from '../../theme';
 
-const useStyle = makeStyles((theme) => ({
+const useStyle = makeStyles(() => ({
   canvasContainer: {
-    height: window.innerHeight - 83,
+    height: window.innerHeight - 98.68,
   },
 }));
 
@@ -20,7 +21,7 @@ const CanvasContainer = () => {
     <div className={classes.canvasContainer}>
       <Canvas camera={{ position: [0, 0, 100], up: [0, 1, 0] }}>
         <fog attach='fog' args={['black', 25, 40]} />
-        <color attach='background' args={['#FAFAFA']} />
+        <color attach='background' args={[theme.palette.background.default]} />
         <Suspense fallback={<Loader />}>
           <OrbitControls />
           <Light />
