@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import LogoSvg from '../../assets/svg/shibainu.svg';
 import NavLayer from './NayLayer';
+import { NavLink } from 'react-router-dom';
 
 const useStyle = makeStyles((theme) => ({
   wrap: {
@@ -25,7 +26,9 @@ const Header = () => {
   const classes = useStyle();
   return (
     <div className={classes.wrap}>
-      <img src={LogoSvg} className={classes.imgStyle}></img>
+      <NavLink to='/'>
+        <img src={LogoSvg} className={classes.imgStyle}></img>
+      </NavLink>
       <NavLayer />
     </div>
   );
