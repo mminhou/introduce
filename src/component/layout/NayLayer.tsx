@@ -1,5 +1,6 @@
 import React from 'react';
-import { Button, Grid, IconButton, makeStyles } from '@material-ui/core';
+import { NavLink } from 'react-router-dom';
+import { Button, IconButton, makeStyles } from '@material-ui/core';
 import Menu from '@material-ui/icons/Menu';
 
 const useStyle = makeStyles((theme) => ({
@@ -39,11 +40,21 @@ const NavLayer = () => {
   return (
     <div className={classes.navStyle}>
       <div className={classes.sectionDesktop}>
-        <Button className={classes.caption}>Posts</Button>
-        <Button className={classes.caption}>Portfolio</Button>
-        <Button className={classes.caption}>Open Source</Button>
-        <Button className={classes.caption}>Resume</Button>
-        <Button className={classes.caption}>Ideas</Button>
+        <Button component={NavLink} to='/post' className={classes.caption}>
+          Post
+        </Button>
+        <Button component={NavLink} to='/portfolio' className={classes.caption}>
+          Portfolio
+        </Button>
+        <Button component={NavLink} to='/openSource' className={classes.caption}>
+          Open Source
+        </Button>
+        <Button component={NavLink} to='/resume' className={classes.caption}>
+          Resume
+        </Button>
+        <Button component={NavLink} to='/idea' className={classes.caption}>
+          Idea
+        </Button>
       </div>
       <div className={classes.sectionMobile}>
         <IconButton>
