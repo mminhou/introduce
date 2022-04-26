@@ -18,7 +18,7 @@ const useStyle = makeStyles((theme) => ({
   imgStyle: {
     borderRadius: '8px',
     marginLeft: '16px',
-    width: '50px',
+    width: '60px',
   },
 }));
 
