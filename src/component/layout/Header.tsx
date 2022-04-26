@@ -1,6 +1,6 @@
 import React from 'react';
-import { Button, makeStyles } from '@material-ui/core';
-import LogoTextSvg from '../../assets/svg/logoText.svg';
+import { makeStyles } from '@material-ui/core';
+import LogoSvg from '../../assets/svg/shibainu.svg';
 import NavLayer from './NayLayer';
 
 const useStyle = makeStyles((theme) => ({
@@ -17,6 +17,7 @@ const useStyle = makeStyles((theme) => ({
   imgStyle: {
     borderRadius: '8px',
     marginLeft: '16px',
+    width: '50px',
   },
 }));
 
@@ -24,7 +25,7 @@ const Header = () => {
   const classes = useStyle();
   return (
     <div className={classes.wrap}>
-      <img src={LogoTextSvg} className={classes.imgStyle}></img>
+      <img src={LogoSvg} className={classes.imgStyle}></img>
       <NavLayer />
     </div>
   );
