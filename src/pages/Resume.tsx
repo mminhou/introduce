@@ -203,6 +203,39 @@ const Resume = () => {
             </div>
           </Grid>
         </Grid>
+        {/* 
+          Experience
+        */}
+        <Grid item xs={12}>
+          <Typography variant='h4' className={classes.subTitle}>
+            Personal Project.
+          </Typography>
+          <Grid item xs={12}>
+            <div className={classes.subContentContainer}>
+              <Divider style={{ margin: '10px 0px' }} />
+              <Typography variant='subtitle2' className={classes.subTitle2}>
+                The Salt &nbsp;&nbsp;
+              </Typography>
+              <Typography variant='body2' className={classes.body2}>
+                <a href='http://the-salt.co.uk/'>(http://the-salt.co.uk/)</a>
+              </Typography>
+              <Typography variant='caption' className={classes.caption}>
+                Seoul, Korea&nbsp;&nbsp;&nbsp;Nov. 2021 ~ Nov. 2021
+              </Typography>
+            </div>
+            <div className={classes.subContentContainer}>
+              <Typography variant='caption' className={classes.caption}>
+                Have joined the world's number one smartpen manufacturing and service company in Korea as a Front-end developer. <br />
+                Developed pen gesture function for&nbsp;
+                <i>
+                  <a href='https://gridaboard.io/'>GridaBoard</a>
+                </i>
+                , the graphic service of company bluetooth smartpen. It was build with ReactJS, Redux and Typescript. <br />
+                Improved company service application's pages UI/UX.
+              </Typography>
+            </div>
+          </Grid>
+        </Grid>
       </Grid>
     </div>
   );
