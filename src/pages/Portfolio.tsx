@@ -1,16 +1,22 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core';
+import { Grid, makeStyles } from '@material-ui/core';
+import PortfolioCanvasContainer from '../component/three/Test/PortfolioCanvasContainer';
 
 const useStyle = makeStyles((theme) => ({
-  
+  mainBackground: {
+    width: '100%',
+    height: '100%',
+    display: 'flex',
+    flexDirection: 'column',
+  },
 }));
 
 const Portfolio = () => {
   const classes = useStyle();
 
   return (
-    <div>
-      <p>Portfolio page</p>
+    <div className={classes.mainBackground}>
+      <PortfolioCanvasContainer />
     </div>
   );
 };
