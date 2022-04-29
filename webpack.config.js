@@ -31,7 +31,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
-        test: /\.(svg|glb|gltf|blob|json)$/i,
+        test: /\.(svg|glb|gltf|blob|jpg|jpeg|png)$/i,
         use: [
           {
             loader: 'file-loader',
@@ -62,5 +62,6 @@ module.exports = {
   devServer: {
     port: 9000,
     hot: true,
+    historyApiFallback: true,
   },
 };
