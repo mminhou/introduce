@@ -1,7 +1,8 @@
 import React from 'react';
-import { Button, makeStyles } from '@material-ui/core';
-import LogoTextSvg from '../../assets/svg/logoText.svg';
+import { makeStyles } from '@material-ui/core';
+import LogoSvg from '../../assets/svg/shibainu.svg';
 import NavLayer from './NayLayer';
+import { NavLink } from 'react-router-dom';
 
 const useStyle = makeStyles((theme) => ({
   wrap: {
@@ -17,6 +18,7 @@ const useStyle = makeStyles((theme) => ({
   imgStyle: {
     borderRadius: '8px',
     marginLeft: '16px',
+    width: '60px',
   },
 }));
 
@@ -24,7 +26,9 @@ const Header = () => {
   const classes = useStyle();
   return (
     <div className={classes.wrap}>
-      <img src={LogoTextSvg} className={classes.imgStyle}></img>
+      <NavLink to='/'>
+        <img src={LogoSvg} className={classes.imgStyle}></img>
+      </NavLink>
       <NavLayer />
     </div>
   );
