@@ -28,12 +28,18 @@ const CanvasContainer = () => {
           {/*<Model />*/}
           {/* <Model2 /> */}
           <Text3d position={{ x: 0, y: 0, z: 0 }} text={"I'm Mminhou"} isRotate={false} />
-          <Text3d position={{ x: -200, y: -200, z: -300 }} text={'Minho'} isRotate={true} />
-          <Text3d position={{ x: 200, y: 200, z: -300 }} text={'Front-End'} isRotate={true} />
+          <Text3d position={{ x: 420, y: -50, z: -300 }} text={'Minho'} isRotate={true} />
+          <Text3d position={{ x: 250, y: 200, z: -300 }} text={'Front-End'} isRotate={true} />
+          <Text3d position={{ x: 50, y: 230, z: -300 }} text={'Full-Stack'} isRotate={true} />
           <Text3d position={{ x: -300, y: 200, z: -300 }} text={'Javascript'} isRotate={true} />
-          <Text3d position={{ x: 300, y: -200, z: -300 }} text={'Typescript'} isRotate={true} />
-          <Text3d position={{ x: 300, y: -200, z: -300 }} text={'HTML'} isRotate={true} />
-          <Text3d position={{ x: 300, y: -200, z: -300 }} text={'CSS'} isRotate={true} />
+          <Text3d position={{ x: -400, y: 70, z: -300 }} text={'Typescript'} isRotate={true} />
+          <Text3d position={{ x: -50, y: -230, z: -300 }} text={'webpack'} isRotate={true} />
+          <Text3d position={{ x: 150, y: -220, z: -300 }} text={'babel'} isRotate={true} />
+          <Text3d position={{ x: 350, y: -160, z: -300 }} text={'HTML/CSS'} isRotate={true} />
+          <Text3d position={{ x: -400, y: -100, z: -300 }} text={'ReactJS'} isRotate={true} />
+          <Text3d position={{ x: -100, y: 240, z: -300 }} text={'Redux'} isRotate={true} />
+          <Text3d position={{ x: 400, y: 100, z: -300 }} text={'AWS'} isRotate={true} />
+          <Text3d position={{ x: -250, y: -200, z: -300 }} text={'Firebase'} isRotate={true} />
         </Suspense>
       </Canvas>
     </div>
