@@ -40,8 +40,8 @@ const NavLayer = () => {
   return (
     <div className={classes.navStyle}>
       <div className={classes.sectionDesktop}>
-        <Button component={NavLink} to='/post' className={classes.caption}>
-          Post
+        <Button component={NavLink} to='/' className={classes.caption}>
+          Home
         </Button>
         <Button component={NavLink} to='/portfolio' className={classes.caption}>
           Portfolio
@@ -51,9 +51,6 @@ const NavLayer = () => {
         </Button>
         <Button component={NavLink} to='/resume' className={classes.caption}>
           Resume
-        </Button>
-        <Button component={NavLink} to='/idea' className={classes.caption}>
-          Idea
         </Button>
       </div>
       <div className={classes.sectionMobile}>
