@@ -1,9 +1,6 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { makeStyles } from '@material-ui/core';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls } from '@react-three/drei';
-import { Suspense } from 'react';
-import { theme } from '../../../theme';
 import Items from './Items';
 import Light from '../Light';
 import Loader from '../Loader';
@@ -19,9 +16,8 @@ const PortfolioCanvasContainer = () => {
 
   return (
     <div className={classes.canvasContainer}>
-      <Canvas camera={{ position: [0, 0, 20], up: [0, 0, 0] }}>
-        <fog attach='fog' args={['black', 25, 40]} />
-        <color attach='background' args={[theme.palette.background.default]} />
+      <Canvas camera={{ position: [0, 0, 5], up: [0, 0, 0] }}>
+        <color attach='background' args={['#151515']} />
         <Suspense fallback={<Loader />}>
           <Light />
           <Items />

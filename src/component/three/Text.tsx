@@ -6,7 +6,13 @@ const roboto = require('../../assets/font/Roboto_Bold.json');
 
 extend({ TextGeometry });
 
-const Text3d = ({ position, text, isRotate }) => {
+interface Text3Props {
+  position: [x: number, y: number, z: number];
+  text: string;
+  isRotate: boolean;
+}
+
+const Text3d = ({ position, text, isRotate }: Text3Props) => {
   const mesh = useRef(null);
   const rotationDegree = isRotate ? Math.random() * 0.01 : 0;
 
@@ -30,8 +36,8 @@ const Text3d = ({ position, text, isRotate }) => {
   };
 
   return (
-    <mesh position={[position.x, position.y, position.z]} ref={mesh}>
-      <textGeometry args={[text, textOptions]}></textGeometry>
+    <mesh position={position} ref={mesh}>
+      <textGeometry attach='geometry' args={[text, textOptions]} />
       <meshStandardMaterial attach='material' color='black' />
     </mesh>
   );
