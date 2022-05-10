@@ -5,29 +5,20 @@ import { Image, useScroll } from '@react-three/drei';
 import { useSnapshot } from 'valtio';
 import { state, damp } from './util';
 
-const Item = ({ index, position, scale, url, c = new THREE.Color() }) => {
+interface ItemProps {
+  index: number;
+  position: [x: number, y: number, z: number];
+  scale: any;
+  url: any;
+  c?: THREE.Color;
+}
+
+const Item = ({ index, position, scale, url, c = new THREE.Color() }: ItemProps) => {
   const ref = useRef(null);
+  const ref2 = useRef(null);
   const scroll = useScroll();
   const { clicked, urls } = useSnapshot(state);
   const [hovered, setHover] = useState(false);
-
-  const click = () => {
-    state.clicked = index === clicked ? null : index;
-  };
-
-  const doucleClick = () => {
-    /**
-     * TODO: double click시 link 이동
-     */
-  };
-
-  const over = () => {
-    setHover(true);
-  };
-
-  const out = () => {
-    setHover(false);
-  };
 
   useFrame((state, delta) => {
     const y = scroll.curve(index / urls.length - 1.5 / urls.length, 4 / urls.length);
@@ -40,9 +31,40 @@ const Item = ({ index, position, scale, url, c = new THREE.Color() }) => {
     ref.current.material.color.set(c.set(hovered || clicked === index ? 'white' : '#aaa'), hovered ? 0.3 : 0.1);
   });
 
+  useFrame((state, delta) => {
+    if (clicked !== null && clicked === index) ref2.current.visible = true;
+    if (clicked !== null && clicked !== index) ref2.current.visible = false;
+    if (clicked === null) ref2.current.visible = false;
+    if (clicked !== null && index < clicked) ref2.current.position.x = damp(ref2.current.position.x, position[0] - 2, 6, delta);
+    if (clicked !== null && index > clicked) ref2.current.position.x = damp(ref2.current.position.x, position[0] + 2, 6, delta);
+    if (clicked === null || clicked === index) ref2.current.position.x = damp(ref2.current.position.x, position[0], 6, delta);
+  });
+
+  const click = () => {
+    state.clicked = index === clicked ? null : index;
+  };
+
+  const click2 = () => {
+    /**
+     * TODO: click시 link 이동
+     */
+  };
+
+  const over = () => {
+    setHover(true);
+  };
+
+  const out = () => {
+    setHover(false);
+  };
+
   return (
     <>
-      <Image ref={ref} position={position} scale={scale} url={url} onClick={click} onDoubleClick={doucleClick} onPointerOver={over} onPointerOut={out} />
+      <Image ref={ref} position={position} scale={scale} url={url} onClick={click} onPointerOver={over} onPointerOut={out} />
+      <mesh position={position} ref={ref2} visible={false} onClick={click2}>
+        <boxBufferGeometry attach='geometry' args={[1, 1, 1]} />
+        <meshStandardMaterial attach='material' color={'#333'} />
+      </mesh>
     </>
   );
 };
