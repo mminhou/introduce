@@ -21,13 +21,10 @@ const App = () => {
       </AppBar>
       <Provider store={store}>
         <Routes>
-          {/* <Route path='/' element={<Login />} /> */}
           <Route path='/' element={<Home />} />
-          <Route path='/post' element={<Post />} />
           <Route path='/portfolio' element={<Portfolio />} />
           <Route path='/openSource' element={<OpenSource />} />
           <Route path='/resume' element={<Resume />} />
-          <Route path='/idea' element={<Idea />} />
         </Routes>
       </Provider>
     </div>
