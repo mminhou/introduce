@@ -1,12 +1,13 @@
 {
   "name": "introduce",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server --host 0.0.0.0 --config ./webpack.config.js",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --hot"
+    "start": "webpack-dev-server --mode development --hot",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -17,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/mminhou/introduce/issues"
   },
-  "homepage": "https://github.com/mminhou/introduce#readme",
+  "homepage": "https://mminhou.github.io/introduce",
   "devDependencies": {
     "@babel/core": "^7.16.0",
     "@babel/preset-env": "^7.16.4",
@@ -43,6 +44,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "file-loader": "^6.2.0",
+    "gh-pages": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
     "jest": "^27.3.1",
     "mini-css-extract-plugin": "^2.4.5",
