@@ -1,0 +1,75 @@
+{
+  "ko": {
+    "introduce": "Experienced and passionated Front-end Developer with about one years of experience developing easy to use and fast web page. \nReliable developer with the ability to manage and achieve project goals, leveraging my knowledges of Javascript and browsers. \nBrining proven track record of improving performance, developing well structured web page with good UX, Writing reliable codes with TDD.",
+    "university": "상명대학교",
+    "universityComment": "서울캠퍼스, 2014 ~ 2021",
+    "universityMajor": "컴퓨터과학전공",
+    "company": [
+      {
+        "name": "(주)네오랩컨버전스",
+        "location": "서울특별시, 한국",
+        "homepage": "https://www.neolab.kr/",
+        "date": "2021. 11. ~ ",
+        "position": "Front-End developer",
+        "caption": "디지털과 아날로그의 장점이 결합된 스마트펜 제조 및 서비스 세계 1위 기업.",
+        "project": [
+          {
+            "title": "GridaBoard v2.0.1",
+            "url": "https://gridaboard.io/",
+            "captions": [
+              "자사 블루투스 스마트펜을 위한 그래픽 서비스인 GridaBoard v2 업데이트",
+              "‘펜 제스처' 기능 개발 및 인식 개선 알고리즘 작성",
+              "GridaBoard 각종 페이지 UX/UI 개선"
+            ]
+          },
+          {
+            "title": "WebPenSDK",
+            "url": "https://github.com/neostudio-team/webPenSDK",
+            "captions": [
+              "자사 스마트펜을 위한 pen SDK 업데이트",
+              "PenSDK를 활용한 외부 공개용 샘플 페이지 작성"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "(주)윌비솔루션",
+        "location": "서울특별시, 한국",
+        "homepage": "",
+        "date": "2018. 01. ~  2018. 04.",
+        "position": "산업기능요원",
+        "caption": "국내금융기관에 CRM,SEM, DW 업무의 컨설팅 및 구축을 수행하는 회사.",
+        "project": [
+          {
+            "title": "I-sysframework 고도화 ",
+            "url": "",
+            "captions": [
+              "회사 자체 솔루션 프레임워크인 I-sysframework Angularjs 기반 고도화 작업",
+              "CRM 솔루션 지원"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "en": {
+    "introduce": "Experienced and passionated Front-end Developer with about one years of experience developing easy to use and fast web page. \nReliable developer with the ability to manage and achieve project goals, leveraging my knowledges of Javascript and browsers. \nBrining proven track record of improving performance, developing well structured web page with good UX, Writing reliable codes with TDD.",
+    "university": "Sangmyung Univ.",
+    "universityComment": "(Seoul, Korea 2014 - 2021)",
+    "universityMajor": "Computer Science Engineering",
+    "companyName": "NeoLAB Convergence Inc.",
+    "company": [
+      {
+        "name": "NeoLAB Convergence Inc.",
+        "location": "Seoul, Korea",
+        "homepage": "https://www.neolab.kr/",
+        "date": "Nov. 2021 ~ Present",
+        "captionLines": [
+          "Experienced and passionated Front-end Developer with about one years of experience developing easy to use and fast web page.",
+          "Reliable developer with the ability to manage and achieve project goals, leveraging my knowledges of Javascript and browsers.",
+          "Brining proven track record of improving performance, developing well structured web page with good UX, Writing reliable codes with TDD."
+        ]     
+      }
+    ]
+  }
+}

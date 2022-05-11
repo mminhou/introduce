@@ -1,6 +1,7 @@
 import React from 'react';
 import { Divider, Grid, makeStyles, Typography } from '@material-ui/core';
-import { Email, Phone, GitHub } from '@material-ui/icons';
+import { Email, Phone, GitHub, ArrowRight } from '@material-ui/icons';
+import json from '../util/textData.json';
 
 const useStyle = makeStyles((theme) => ({
   mainBackground: {
@@ -25,6 +26,13 @@ const useStyle = makeStyles((theme) => ({
   subContentContainer: {
     margin: '5px 0px',
   },
+  projectContainer: {
+    margin: '20px',
+  },
+  projectTitle: {
+    fontSize: '17px',
+    fontWeight: 'bold',
+  },
   resumeName: {
     fontSize: '70px',
     fontWeight: 'bold',
@@ -42,22 +50,27 @@ const useStyle = makeStyles((theme) => ({
   },
   subTitle2: {
     display: 'inline',
-    fontWeight: 700,
+    fontWeight: 'bold',
     fontSize: '17px',
-    marginBottom: 20,
+    marginBottom: '20px',
+    marginRight: '15px',
   },
   body2: {
     display: 'inline',
   },
   caption: {
     fontSize: '15px',
-    display: 'block',
+    display: 'flex',
+    margin: '10px 0px',
+  },
+  divider: {
     margin: '10px 0px',
   },
 }));
 
 const Resume = () => {
   const classes = useStyle();
+  const textJson = json.ko;
 
   return (
     <div className={classes.mainBackground}>
@@ -107,9 +120,16 @@ const Resume = () => {
             Introduce.
           </Typography>
           <div className={classes.subContentContainer}>
-            <Typography>Experienced and passionated Front-end Developer with about one years of experience developing easy to use and fast web page.</Typography>
-            <Typography>Reliable developer with the ability to manage and achieve project goals, leveraging my knowledges of Javascript and browsers.</Typography>
-            <Typography>Brining proven track record of improving performance, developing well structured web page with good UX, Writing reliable codes with TDD.</Typography>
+            <Typography variant='subtitle1'>
+              {textJson.introduce.split('\n').map((line) => {
+                return (
+                  <span>
+                    {line}
+                    <br />
+                  </span>
+                );
+              })}
+            </Typography>
           </div>
         </Grid>
         {/* 
@@ -121,15 +141,15 @@ const Resume = () => {
           </Typography>
           <div className={classes.subContentContainer}>
             <Typography variant='subtitle2' className={classes.subTitle2}>
-              Sangmyung Univ. &nbsp;&nbsp;
+              {textJson.university}
             </Typography>
             <Typography variant='body2' className={classes.body2}>
-              (Seoul, Korea 2014 - 2021)
+              {textJson.universityComment}
             </Typography>
           </div>
           <div className={classes.subContentContainer}>
             <Typography variant='caption' className={classes.caption}>
-              BS. Computer Science Engineering
+              BS. {textJson.universityMajor}
             </Typography>
           </div>
         </Grid>
@@ -140,11 +160,16 @@ const Resume = () => {
           <Typography variant='h4' className={classes.subTitle}>
             Open Source.
           </Typography>
-          <Typography variant='subtitle2' style={{ fontSize: '17px' }}>
+          <Typography>
             <a href='https://github.com/mminhou'>https://github.com/mminhou</a>
           </Typography>
-          <Typography variant='subtitle2' style={{ fontSize: '17px' }}>
+          <br />
+          <Typography variant='caption' className={classes.subTitle2}>
             <a href='https://www.npmjs.com/~mminhou'>https://www.npmjs.com/~mminhou</a>
+          </Typography>
+          <br />
+          <Typography variant='caption' className={classes.subTitle2}>
+            <a href='https://mminhou.github.io/introduce'>https://mminhou.github.io/introduce</a>
           </Typography>
         </Grid>
         {/* 
@@ -154,54 +179,41 @@ const Resume = () => {
           <Typography variant='h4' className={classes.subTitle}>
             Experience.
           </Typography>
-          <Grid item xs={12}>
-            <div className={classes.subContentContainer}>
-              <Divider style={{ margin: '10px 0px' }} />
-              <Typography variant='subtitle2' className={classes.subTitle2}>
-                NeoLAB Convergence Inc. &nbsp;&nbsp;
-              </Typography>
-              <Typography variant='body2' className={classes.body2}>
-                <a href='https://www.neolab.kr/'>(https://www.neolab.kr/)</a>
-              </Typography>
-              <Typography variant='caption' className={classes.caption}>
-                Seoul, Korea&nbsp;&nbsp;&nbsp;Nov. 2021 ~ Present
-              </Typography>
-            </div>
-            <div className={classes.subContentContainer}>
-              <Typography variant='caption' className={classes.caption}>
-                Have joined the world's number one smartpen manufacturing and service company in Korea as a Front-end developer. <br />
-                Developed pen gesture function for&nbsp;
-                <i>
-                  <a href='https://gridaboard.io/'>GridaBoard</a>
-                </i>
-                , the graphic service of company bluetooth smartpen. It was build with ReactJS, Redux and Typescript. <br />
-                Improved company service application's pages UI/UX.
-              </Typography>
-            </div>
-            <div className={classes.subContentContainer}>
-              <Divider style={{ margin: '10px 0px' }} />
-              <Typography variant='subtitle2' className={classes.subTitle2}>
-                NeoLAB Convergence Inc. &nbsp;&nbsp;
-              </Typography>
-              <Typography variant='body2' className={classes.body2}>
-                <a href='https://www.neolab.kr/'>(https://www.neolab.kr/)</a>
-              </Typography>
-              <Typography variant='caption' className={classes.caption}>
-                Seoul, Korea&nbsp;&nbsp;&nbsp;Nov. 2021 ~ Present
-              </Typography>
-            </div>
-            <div className={classes.subContentContainer}>
-              <Typography variant='caption' className={classes.caption}>
-                Have joined the world's number one smartpen manufacturing and service company in Korea as a Front-end developer. <br />
-                Developed pen gesture function for&nbsp;
-                <i>
-                  <a href='https://gridaboard.io/'>GridaBoard</a>
-                </i>
-                , the graphic service of company bluetooth smartpen. It was build with ReactJS, Redux and Typescript. <br />
-                Improved company service application's pages UI/UX.
-              </Typography>
-            </div>
-          </Grid>
+          {textJson.company.map((comp) => (
+            <Grid item xs={12}>
+              <div className={classes.subContentContainer}>
+                <Divider className={classes.divider} />
+                <Typography variant='subtitle2' className={classes.subTitle2}>
+                  {comp.homepage ? <a href={comp.homepage}>{comp.name}</a> : `${comp.name}`}
+                </Typography>
+                <Typography variant='body2' className={classes.body2}>
+                  <b>( {comp.position} )</b>
+                </Typography>
+                <Typography variant='caption' className={classes.caption}>
+                  {comp.location}&nbsp;&nbsp;&nbsp;{comp.date}
+                </Typography>
+              </div>
+              <div className={classes.subContentContainer}>
+                <Typography variant='caption' className={classes.caption}>
+                  {comp.caption}
+                </Typography>
+              </div>
+              <div className={classes.subContentContainer}>
+                {comp.project.map((proj) => (
+                  <div className={classes.projectContainer}>
+                    <Typography className={classes.projectTitle}>
+                      <a href={proj.url}>{proj.title}</a>
+                    </Typography>
+                    {proj.captions.map((caption) => (
+                      <Typography variant='caption' className={classes.caption}>
+                        <ArrowRight /> {caption}
+                      </Typography>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </Grid>
+          ))}
         </Grid>
         {/* 
           Experience
@@ -214,7 +226,7 @@ const Resume = () => {
             <div className={classes.subContentContainer}>
               <Divider style={{ margin: '10px 0px' }} />
               <Typography variant='subtitle2' className={classes.subTitle2}>
-                The Salt &nbsp;&nbsp;
+                The Salt
               </Typography>
               <Typography variant='body2' className={classes.body2}>
                 <a href='http://the-salt.co.uk/'>(http://the-salt.co.uk/)</a>
