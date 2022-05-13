@@ -2,6 +2,11 @@ import React from 'react';
 import { Divider, Grid, makeStyles, Typography } from '@material-ui/core';
 import { Email, Phone, GitHub, ArrowRight } from '@material-ui/icons';
 import json from '../util/textData.json';
+import ResumeIntroduce from '../component/layout/Resume/ResumeIntroduce';
+import ResumeEducation from '../component/layout/Resume/ResumeEducation';
+import ResumeOpenSource from '../component/layout/Resume/ResumeOpenSource';
+import ResumeWorkExperience from '../component/layout/Resume/ResumeWorkExperience';
+import ResumeHeader from '../component/layout/Resume/ResumeHeader';
 
 const useStyle = makeStyles((theme) => ({
   mainBackground: {
@@ -75,149 +80,11 @@ const Resume = () => {
   return (
     <div className={classes.mainBackground}>
       <Grid container justifyContent='center' alignItems='center' spacing={3}>
-        {/* 
-          Minho Choi
-        */}
-        <Grid item md={4} xs={12}>
-          <Typography variant='h1' className={classes.resumeName}>
-            Minho Choi
-          </Typography>
-          <Typography variant='h5' className={classes.resumePosition}>
-            Front-End Developer
-          </Typography>
-        </Grid>
-        <Grid item md={4}></Grid>
-        {/* 
-          Contact, Channel
-        */}
-        <Grid item md={4} xs={12}>
-          <Typography variant='h5' className={classes.subTitle}>
-            Contact.
-          </Typography>
-          <div className={classes.iconTextContainer}>
-            <Email className={classes.smallIcon} fontSize='small' />
-            <Typography variant='body1'>exit19093@gmail.com</Typography>
-          </div>
-          <div className={classes.iconTextContainer}>
-            <Phone className={classes.smallIcon} fontSize='small' />
-            <Typography variant='body1'>+82)10-2895-1359</Typography>
-          </div>
-          <Typography variant='h5' className={classes.subTitle}>
-            Channel.
-          </Typography>
-          <div className={classes.iconTextContainer}>
-            <GitHub className={classes.smallIcon} fontSize='small' />
-            <Typography variant='body1'>
-              <a href='https://github.com/mminhou'>https://github.com/mminhou</a>
-            </Typography>
-          </div>
-        </Grid>
-        {/* 
-          Introduce
-        */}
-        <Grid item xs={12}>
-          <Typography variant='h4' className={classes.subTitle}>
-            Introduce.
-          </Typography>
-          <div className={classes.subContentContainer}>
-            <Typography variant='subtitle1'>
-              {textJson.introduce.split('\n').map((line) => {
-                return (
-                  <span>
-                    {line}
-                    <br />
-                  </span>
-                );
-              })}
-            </Typography>
-          </div>
-        </Grid>
-        {/* 
-          Education 
-        */}
-        <Grid item md={6} xs={12}>
-          <Typography variant='h4' className={classes.subTitle}>
-            Education.
-          </Typography>
-          <div className={classes.subContentContainer}>
-            <Typography variant='subtitle2' className={classes.subTitle2}>
-              {textJson.university}
-            </Typography>
-            <Typography variant='body2' className={classes.body2}>
-              {textJson.universityComment}
-            </Typography>
-          </div>
-          <div className={classes.subContentContainer}>
-            <Typography variant='caption' className={classes.caption}>
-              BS. {textJson.universityMajor}
-            </Typography>
-          </div>
-        </Grid>
-        {/* 
-          OpenSource
-        */}
-        <Grid item md={6} xs={12}>
-          <Typography variant='h4' className={classes.subTitle}>
-            Open Source.
-          </Typography>
-          <Typography>
-            <a href='https://github.com/mminhou'>https://github.com/mminhou</a>
-          </Typography>
-          <br />
-          <Typography variant='caption' className={classes.subTitle2}>
-            <a href='https://www.npmjs.com/~mminhou'>https://www.npmjs.com/~mminhou</a>
-          </Typography>
-          <br />
-          <Typography variant='caption' className={classes.subTitle2}>
-            <a href='https://mminhou.github.io/introduce'>https://mminhou.github.io/introduce</a>
-          </Typography>
-        </Grid>
-        {/* 
-          Experience
-        */}
-        <Grid item xs={12}>
-          <Typography variant='h4' className={classes.subTitle}>
-            Experience.
-          </Typography>
-          {textJson.company.map((comp) => (
-            <Grid item xs={12}>
-              <div className={classes.subContentContainer}>
-                <Divider className={classes.divider} />
-                <Typography variant='subtitle2' className={classes.subTitle2}>
-                  {comp.homepage ? <a href={comp.homepage}>{comp.name}</a> : `${comp.name}`}
-                </Typography>
-                <Typography variant='body2' className={classes.body2}>
-                  <b>( {comp.position} )</b>
-                </Typography>
-                <Typography variant='caption' className={classes.caption}>
-                  {comp.location}&nbsp;&nbsp;&nbsp;{comp.date}
-                </Typography>
-              </div>
-              <div className={classes.subContentContainer}>
-                <Typography variant='caption' className={classes.caption}>
-                  {comp.caption}
-                </Typography>
-              </div>
-              <div className={classes.subContentContainer}>
-                {comp.project.map((proj) => (
-                  <div className={classes.projectContainer}>
-                    <Typography className={classes.projectTitle}>
-                      <a href={proj.url}>{proj.title}</a>
-                    </Typography>
-                    {proj.captions.map((caption) => (
-                      <Typography variant='caption' className={classes.caption}>
-                        <ArrowRight /> {caption}
-                      </Typography>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            </Grid>
-          ))}
-        </Grid>
-        {/* 
-          Experience
-        */}
+        <ResumeHeader />
+        <ResumeIntroduce />
+        <ResumeEducation />
+        <ResumeOpenSource />
+        <ResumeWorkExperience />
         <Grid item xs={12}>
           <Typography variant='h4' className={classes.subTitle}>
             Personal Project.
