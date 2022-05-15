@@ -8,7 +8,7 @@ import { theme } from './theme/theme';
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <BrowserRouter>
+    <BrowserRouter basename=''>
       <App />
     </BrowserRouter>
   </ThemeProvider>,
