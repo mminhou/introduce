@@ -11,7 +11,8 @@
     "allowJs": true,
     "jsx": "react",
     "allowSyntheticDefaultImports": true,
-    "keyofStringsOnly": true
+    "keyofStringsOnly": true,
+    "resolveJsonModule": true,
   },
   "typeRoots": [
     "node_modules/@types",
