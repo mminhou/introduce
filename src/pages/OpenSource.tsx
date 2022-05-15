@@ -43,7 +43,7 @@ const OpenSource = () => {
           <CardHeader
             avatar={<Avatar src={profile} className={classes.avatar} />}
             title={<a href='https://www.npmjs.com/package/web_pen_sdk'>web_pen_sdk</a>}
-            subheader='Created By mminhou.'
+            subheader='Contribute to webPenSDK'
             action={
               <IconButton>
                 <Star />
