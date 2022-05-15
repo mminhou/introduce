@@ -36,12 +36,12 @@ const ResumeEducation = () => {
         Education.
       </Typography>
       <Grid item container alignItems='center' spacing={1}>
-        <Grid item lg={3} md={4} xs={12}>
+        <Grid item md={4} xs={12}>
           <Typography variant='subtitle2' className={classes.subtitle}>
             {textJson.university.name}
           </Typography>
         </Grid>
-        <Grid item lg={9} md={8} xs={12}>
+        <Grid item md={8} xs={12}>
           <Typography variant='body2' className={classes.body2}>
             {textJson.university.comment}
           </Typography>

@@ -20,11 +20,8 @@ const useStyle = makeStyles((theme) => ({
     fontWeight: 'bold',
   },
   subTitle2: {
-    display: 'inline',
     fontWeight: 'bold',
     fontSize: '17px',
-    marginBottom: '20px',
-    marginRight: '15px',
   },
   body2: {
     margin: '10px 0px',
@@ -50,14 +47,14 @@ const ResumeWorkExperience = () => {
       <Divider className={classes.divider} />
       {textJson.company.map((comp) => (
         <Grid item container alignItems='center'>
-          <Grid item lg={2} md={4} xs={12} style={{ minWidth: 180 }}>
+          <Grid item md={3} xs={12}>
             <Typography variant='subtitle2' className={classes.subTitle2}>
               {comp.homepage ? <a href={comp.homepage}>{comp.name}</a> : `${comp.name}`}
             </Typography>
           </Grid>
-          <Grid item lg={9} md={8} xs={12}>
+          <Grid item md={9} xs={12}>
             <Typography variant='caption' className={classes.caption}>
-              {comp.location}&nbsp;&nbsp;&nbsp;{comp.duration}
+              {comp.duration}
             </Typography>
           </Grid>
           <Grid item xs={12}>
