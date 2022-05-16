@@ -10,7 +10,7 @@ const useStyle = makeStyles((theme) => ({
     color: '#104869',
   },
   subContentContainer: {
-    margin: '10px 0px',
+    margin: '20px 0px',
   },
   projectContainer: {
     margin: '20px',
@@ -61,7 +61,7 @@ const ResumePersonalProject = () => {
               {person.caption}
             </Typography>
           </Grid>
-          <Grid item xs={12} style={{ alignItems: 'center' }}>
+          <Grid item xs={12}>
             <div className={classes.iconTextContainer}>
               <GitHub className={classes.smallIcon} />
               <Typography variant='body2' className={classes.body2}>
@@ -69,7 +69,7 @@ const ResumePersonalProject = () => {
               </Typography>
             </div>
           </Grid>
-          <Grid item xs={12} style={{ alignItems: 'center' }}>
+          <Grid item xs={12}>
             <div className={classes.iconTextContainer}>
               <BuildOutlined className={classes.smallIcon} />
               <Typography variant='caption' className={classes.caption}>
