@@ -1,7 +1,8 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { Button, IconButton, makeStyles } from '@material-ui/core';
+import React, { useState } from 'react';
+import { makeStyles, Box, Divider, Drawer, IconButton, List, ListItem, Typography } from '@material-ui/core';
 import Menu from '@material-ui/icons/Menu';
+import LinkButton from '../LinkButton';
+import LogoSvg from '../../assets/svg/shibainu.svg';
 
 const useStyle = makeStyles((theme) => ({
   navStyle: {
@@ -21,6 +22,15 @@ const useStyle = makeStyles((theme) => ({
     width: '120px',
     marginRight: '16px',
   },
+  imgStyle: {
+    width: '30%',
+  },
+  listItem: {
+    padding: 0,
+  },
+  drawerButton: {
+    width: '100%',
+  },
   sectionDesktop: {
     display: 'none',
     [theme.breakpoints.up('md')]: {
@@ -37,26 +47,56 @@ const useStyle = makeStyles((theme) => ({
 
 const NavLayer = () => {
   const classes = useStyle();
+  const [open, setOpen] = useState<boolean>(false);
+
+  const navigations = [
+    { title: 'HOME', to: '/' },
+    { title: 'PORTFOLIO', to: '/portfolio' },
+    { title: 'OPEN SOURCE', to: '/openSource' },
+    { title: 'RESUME', to: '/resume' },
+  ];
+
+  const toggleDrawer = (open: boolean) => () => {
+    setOpen(open);
+  };
+
+  const list = () => (
+    <Box sx={{ width: 300 }}>
+      <List>
+        <img src={LogoSvg} className={classes.imgStyle}></img>
+        <Typography variant='h6'>MMINHOU</Typography>
+      </List>
+      <Divider />
+      <List>
+        {navigations.map((navigation) => (
+          <ListItem onClick={toggleDrawer(false)} className={classes.listItem}>
+            <LinkButton title={navigation.title} to={navigation.to} _className={classes.drawerButton} />
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
+        <Typography variant='body2' onClick={toggleDrawer(false)}>
+          EXIT
+        </Typography>
+      </List>
+    </Box>
+  );
+
   return (
     <div className={classes.navStyle}>
       <div className={classes.sectionDesktop}>
-        <Button component={NavLink} to='/' className={classes.caption}>
-          Home
-        </Button>
-        <Button component={NavLink} to='/portfolio' className={classes.caption}>
-          Portfolio
-        </Button>
-        <Button component={NavLink} to='/openSource' className={classes.caption}>
-          Open Source
-        </Button>
-        <Button component={NavLink} to='/resume' className={classes.caption}>
-          Resume
-        </Button>
+        {navigations.map((navigation) => (
+          <LinkButton title={navigation.title} to={navigation.to} _className={classes.caption} />
+        ))}
       </div>
       <div className={classes.sectionMobile}>
-        <IconButton>
+        <IconButton onClick={toggleDrawer(true)}>
           <Menu />
         </IconButton>
+        <Drawer anchor={'right'} open={open} onClose={toggleDrawer(false)}>
+          {list()}
+        </Drawer>
       </div>
     </div>
   );
