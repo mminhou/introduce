@@ -9,11 +9,17 @@ const useStyle = makeStyles((theme) => ({
     margin: '20px 0px 10px 0px',
     color: '#104869',
   },
-  subContentContainer: {
-    margin: '5px 0px',
+  companyContainer: {
+    marginBottom: '10px',
+    paddingBottom: '10px',
+    borderBottom: '1px solid black',
   },
   projectContainer: {
+    display: 'flex',
     margin: '20px',
+  },
+  companyTitle: {
+    minWidth: '160px',
   },
   projectTitle: {
     fontSize: '17px',
@@ -21,7 +27,7 @@ const useStyle = makeStyles((theme) => ({
   },
   subTitle2: {
     fontWeight: 'bold',
-    fontSize: '17px',
+    fontSize: '20px',
   },
   body2: {
     margin: '10px 0px',
@@ -46,45 +52,52 @@ const ResumeWorkExperience = () => {
       </Typography>
       <Divider className={classes.divider} />
       {textJson.company.map((comp) => (
-        <Grid item container alignItems='center'>
-          <Grid item md={3} xs={12}>
-            <Typography variant='subtitle2' className={classes.subTitle2}>
-              {comp.homepage ? <a href={comp.homepage}>{comp.name}</a> : `${comp.name}`}
-            </Typography>
-          </Grid>
-          <Grid item md={9} xs={12}>
-            <Typography variant='caption' className={classes.caption}>
-              {comp.duration}
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant='body2' className={classes.body2}>
-              <b>{comp.position}</b>
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <Typography variant='caption' className={classes.caption}>
-              {comp.caption}
-            </Typography>
-          </Grid>
-          <Grid item xs={12}>
-            <div className={classes.subContentContainer}>
-              {comp.project.map((proj) => (
-                <div className={classes.projectContainer}>
-                  <Typography className={classes.projectTitle}>
-                    <a href={proj.url}>{proj.title}</a>
-                  </Typography>
-                  {proj.captions.map((caption) => (
-                    <Typography variant='caption' className={classes.caption}>
-                      <ArrowRight /> {caption}
+        <div>
+          <Grid item container alignItems='center'>
+            <Grid item md={2} xs={12} className={classes.companyTitle}>
+              <Typography variant='subtitle2' className={classes.subTitle2}>
+                {comp.homepage ? <a href={comp.homepage}>{comp.name}</a> : `${comp.name}`}
+              </Typography>
+            </Grid>
+            <Grid item md={10} xs={12}>
+              <Typography variant='caption' className={classes.caption}>
+                {comp.duration}
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography variant='body2' className={classes.body2}>
+                <b>{comp.position}</b>
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <Typography variant='caption' className={classes.caption}>
+                {comp.caption}
+              </Typography>
+            </Grid>
+            {comp.project.map((proj) => (
+              <div style={{ width: '100%', margin: '20px 0px 0px 0px' }}>
+                <Grid item container>
+                  <Grid item md={4} xs={12}>
+                    <Typography className={classes.projectTitle}>
+                      <a href={proj.url}>{proj.title}</a>
                     </Typography>
-                  ))}
-                </div>
-              ))}
-            </div>
-            <Divider className={classes.divider} />
+                    <Typography variant='caption' className={classes.caption}>
+                      {proj.duration}
+                    </Typography>
+                  </Grid>
+                  <Grid item md={8} xs={12}>
+                    {proj.captions.map((caption) => (
+                      <Typography variant='caption' className={classes.caption}>
+                        <ArrowRight /> {caption}
+                      </Typography>
+                    ))}
+                  </Grid>
+                </Grid>
+              </div>
+            ))}
           </Grid>
-        </Grid>
+          <Divider className={classes.divider} />
+        </div>
       ))}
     </Grid>
   );
