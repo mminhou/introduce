@@ -1,11 +1,13 @@
 import { Html, useProgress } from '@react-three/drei';
 import React from 'react';
+import ProgressBar from '../ProgressBar';
 
 const Loader = () => {
-  const { active, progress, errors, item, loaded, total } = useProgress();
+  const { progress } = useProgress();
+
   return (
     <Html center>
-      {progress} % ${loaded}
+      <ProgressBar value={progress} />
     </Html>
   );
 };
