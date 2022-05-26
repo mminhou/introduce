@@ -2,15 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
-import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { ThemeProvider } from '@material-ui/styles';
 import { theme } from './theme/theme';
+import { history } from './history';
+import CustomRouter from './CustomRouter';
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <HashRouter basename=''>
+    <CustomRouter history={history}>
       <App />
-    </HashRouter>
+    </CustomRouter>
   </ThemeProvider>,
   document.getElementById('root'),
 );
