@@ -3,7 +3,7 @@ import * as THREE from 'three';
 import { useFrame, useThree } from '@react-three/fiber';
 import { useScroll } from '@react-three/drei';
 import { useSnapshot } from 'valtio';
-import { state, damp } from './util';
+import { state, damp } from './proxy';
 
 const Minimap = () => {
   const group = useRef<THREE.Group>();
