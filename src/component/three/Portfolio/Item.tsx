@@ -1,26 +1,10 @@
 import React, { useRef, useState } from 'react';
 import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
-import { Html, Image, useScroll } from '@react-three/drei';
+import { Image, useScroll } from '@react-three/drei';
 import { useSnapshot } from 'valtio';
-import { state, damp } from './util';
-import { Button, makeStyles } from '@material-ui/core';
-
-const useStyle = makeStyles((theme) => ({
-  buttonContainer: {
-    visibility: (showButton) => (showButton ? 'visible' : 'hidden'),
-    textAlign: 'left',
-  },
-  detailViewButton: {
-    width: 224,
-    height: 60,
-    top: -30,
-    left: -112,
-    borderRadius: '30px',
-    background: '#0A9DAA',
-    color: '#FFFFFF',
-  },
-}));
+import { state, damp } from './proxy';
+import DetailViewButton from './DetailViewButton';
 
 interface ItemProps {
   index: number;
@@ -32,12 +16,9 @@ interface ItemProps {
 
 const Item = ({ index, position, scale, url, c = new THREE.Color() }: ItemProps) => {
   const ref = useRef(null);
-  const buttonRef = useRef(null);
   const scroll = useScroll();
   const { clicked, urls } = useSnapshot(state);
   const [hovered, setHover] = useState(false);
-  const [showButton, setShowButton] = useState(false);
-  const classes = useStyle(showButton);
 
   useFrame((state, delta) => {
     const y = scroll.curve(index / urls.length - 1.5 / urls.length, 4 / urls.length);
@@ -50,33 +31,8 @@ const Item = ({ index, position, scale, url, c = new THREE.Color() }: ItemProps)
     ref.current.material.color.set(c.set(hovered || clicked === index ? 'white' : '#aaa'), hovered ? 0.3 : 0.1);
   });
 
-  useFrame((state, delta) => {
-    if (clicked !== null && clicked === index) {
-      buttonRef.current.visible = true;
-      setShowButton(true);
-    }
-    if (clicked !== null && clicked !== index) {
-      buttonRef.current.visible = false;
-      setShowButton(false);
-    }
-    if (clicked === null) {
-      buttonRef.current.visible = false;
-      setShowButton(false);
-    }
-    if (clicked !== null && index < clicked) buttonRef.current.position.x = damp(buttonRef.current.position.x, position[0] - 2, 6, delta);
-    if (clicked !== null && index > clicked) buttonRef.current.position.x = damp(buttonRef.current.position.x, position[0] + 2, 6, delta);
-    if (clicked === null || clicked === index) buttonRef.current.position.x = damp(buttonRef.current.position.x, position[0], 6, delta);
-  });
-
   const click = () => {
     state.clicked = index === clicked ? null : index;
-  };
-
-  const showDetailView = () => {
-    /**
-     * TODO: click시 link 이동
-     */
-    alert('click');
   };
 
   const over = () => {
@@ -90,13 +46,7 @@ const Item = ({ index, position, scale, url, c = new THREE.Color() }: ItemProps)
   return (
     <>
       <Image ref={ref} position={position} scale={scale} url={url} onClick={click} onPointerOver={over} onPointerOut={out} />
-      <mesh position={position} ref={buttonRef} visible={false}>
-        <Html className={classes.buttonContainer}>
-          <Button color='secondary' variant='contained' className={classes.detailViewButton} onClick={showDetailView}>
-            SHOW MORE
-          </Button>
-        </Html>
-      </mesh>
+      <DetailViewButton index={index} position={position} />
     </>
   );
 };
