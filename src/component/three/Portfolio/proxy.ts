@@ -26,7 +26,7 @@ const projectList = [
     projectId: 'theSalt',
     image: theSalt,
   },
-]
+];
 
 export const damp = THREE.MathUtils.damp;
 export const state = proxy({
