@@ -1,30 +1,30 @@
 import * as THREE from 'three';
 import { proxy } from 'valtio';
-import theSalt from '../../../assets/images/1.jpg';
-import introduce from '../../../assets/images/2.jpg';
-import gridaboard from '../../../assets/images/3.jpg';
-import penSdk from '../../../assets/images/4.jpg';
+import theSalt from '../../../assets/images/theSalt.jpg';
+import introduce from '../../../assets/images/introduce.jpg';
+import gridaboard from '../../../assets/images/gridaboard.jpg';
+import webPenSdk from '../../../assets/images/webPenSdk.jpg';
 
 const projectList = [
   {
-    company: 'neolab',
-    image: penSdk,
-    project: 'penSdk',
+    companyId: 'neolab',
+    projectId: 'webPenSdk',
+    image: webPenSdk,
   },
   {
-    company: 'neolab',
+    companyId: 'neolab',
+    projectId: 'gridaboard',
     image: gridaboard,
-    project: 'gridaboard',
   },
   {
-    company: 'personal',
+    companyId: 'personal',
+    projectId: 'introduce',
     image: introduce,
-    project: 'introduce',
   },
   {
-    company: 'personal',
+    companyId: 'personal',
+    projectId: 'theSalt',
     image: theSalt,
-    project: 'theSalt',
   },
 ]
 
