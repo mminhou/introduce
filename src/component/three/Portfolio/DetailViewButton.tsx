@@ -23,7 +23,7 @@ const useStyle = makeStyles((theme) => ({
 }));
 
 
-const DetailViewButton = ({ index, position }) => {
+const DetailViewButton = ({ index, position, url }) => {
   const ref = useRef(null);
   const { clicked } = useSnapshot(state);
   const [showButton, setShowButton] = useState(false);
@@ -48,7 +48,7 @@ const DetailViewButton = ({ index, position }) => {
   });
 
   const showDetailView = () => {
-    history.push(`/portfolio/${index}/gridaboard`);
+    history.push(`/portfolio/${url.companyId}/${url.projectId}`);
   };
 
   return (
