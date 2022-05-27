@@ -61,7 +61,7 @@ const ResumeWorkExperience = () => {
             </Grid>
             <Grid item md={10} xs={12}>
               <Typography variant='caption' className={classes.caption}>
-                {comp.duration}
+                {comp.period}
               </Typography>
             </Grid>
             <Grid item xs={12}>
@@ -82,7 +82,7 @@ const ResumeWorkExperience = () => {
                       <a href={proj.url}>{proj.title}</a>
                     </Typography>
                     <Typography variant='caption' className={classes.caption}>
-                      {proj.duration}
+                      {proj.period}
                     </Typography>
                   </Grid>
                   <Grid item md={8} xs={12}>
