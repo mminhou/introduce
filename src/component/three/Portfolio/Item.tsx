@@ -45,8 +45,8 @@ const Item = ({ index, position, scale, url, c = new THREE.Color() }: ItemProps)
 
   return (
     <>
-      <Image ref={ref} position={position} scale={scale} url={url} onClick={click} onPointerOver={over} onPointerOut={out} />
-      <DetailViewButton index={index} position={position} />
+      <Image ref={ref} position={position} scale={scale} url={url.image} onClick={click} onPointerOver={over} onPointerOut={out} />
+      <DetailViewButton index={index} position={position} url={url} />
     </>
   );
 };

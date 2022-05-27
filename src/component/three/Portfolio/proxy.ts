@@ -31,5 +31,5 @@ const projectList = [
 export const damp = THREE.MathUtils.damp;
 export const state = proxy({
   clicked: null,
-  urls: projectList.map((obj) => obj.image),
+  urls: projectList.map((obj) => obj),
 });
