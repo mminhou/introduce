@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, Grid, Typography } from '@material-ui/core';
-import json from '../../../util/textData.json';
+import ko from '../../../util/textData';
 
 const useStyle = makeStyles((theme) => ({
   title: {
@@ -28,7 +28,7 @@ const useStyle = makeStyles((theme) => ({
 
 const ResumeEducation = () => {
   const classes = useStyle();
-  const textJson = json.ko;
+  const data = ko;
 
   return (
     <Grid item md={6} xs={12}>
@@ -38,18 +38,18 @@ const ResumeEducation = () => {
       <Grid item container alignItems='center' spacing={1}>
         <Grid item md={4} xs={12}>
           <Typography variant='subtitle2' className={classes.subtitle}>
-            {textJson.university.name}
+            {data.university.name}
           </Typography>
         </Grid>
         <Grid item md={8} xs={12}>
           <Typography variant='body2' className={classes.body2}>
-            {textJson.university.comment}
+            {data.university.comment}
           </Typography>
         </Grid>
       </Grid>
       <div className={classes.contentContainer}>
         <Typography variant='caption' className={classes.caption}>
-          BS. {textJson.university.major}
+          BS. {data.university.major}
         </Typography>
       </div>
     </Grid>

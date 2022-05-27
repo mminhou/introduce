@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles, Grid, Typography, Divider } from '@material-ui/core';
-import json from '../../../util/textData.json';
 import { ArrowRight } from '@material-ui/icons';
+import ko from '../../../util/textData';
 
 const useStyle = makeStyles((theme) => ({
   title: {
@@ -43,7 +43,7 @@ const useStyle = makeStyles((theme) => ({
 
 const ResumeWorkExperience = () => {
   const classes = useStyle();
-  const textJson = json.ko;
+  const data = ko;
 
   return (
     <Grid item xs={12}>
@@ -51,7 +51,7 @@ const ResumeWorkExperience = () => {
         Work Experience.
       </Typography>
       <Divider className={classes.divider} />
-      {textJson.company.map((comp) => (
+      {data.company.map((comp) => (
         <div>
           <Grid item container alignItems='center'>
             <Grid item md={2} xs={12} className={classes.companyTitle}>
