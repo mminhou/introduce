@@ -22,7 +22,6 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-
 const DetailViewButton = ({ index, position, url }) => {
   const ref = useRef(null);
   const { clicked } = useSnapshot(state);
