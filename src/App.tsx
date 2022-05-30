@@ -8,6 +8,7 @@ import Portfolio from './pages/Portfolio';
 import OpenSource from './pages/OpenSource';
 import Resume from './pages/Resume';
 import Header from './component/layout/Header';
+import PortfolioDetail from './pages/PortfolioDetail';
 
 const store: RootStore = rootStore();
 
@@ -21,6 +22,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/portfolio' element={<Portfolio />} />
+          <Route path='/portfolio/:companyId/:projectId' element={<PortfolioDetail />} />
           <Route path='/openSource' element={<OpenSource />} />
           <Route path='/resume' element={<Resume />} />
           <Route path='*' element={<Navigate to='/' />} />

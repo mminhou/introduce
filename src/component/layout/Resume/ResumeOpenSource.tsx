@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, Grid, Typography } from '@material-ui/core';
-import json from '../../../util/textData.json';
+import ko from '../../../util/textData';
 
 const useStyle = makeStyles((theme) => ({
   title: {
@@ -15,7 +15,7 @@ const useStyle = makeStyles((theme) => ({
 
 const ResumeOpenSource = () => {
   const classes = useStyle();
-  const textJson = json.ko;
+  const data = ko;
 
   return (
     <Grid item md={6} xs={12}>
@@ -24,12 +24,12 @@ const ResumeOpenSource = () => {
       </Typography>
       <div className={classes.contentContainer}>
         <Typography>
-          <a href={textJson.github}>{textJson.github}</a>
+          <a href={data.github}>{data.github}</a>
         </Typography>
       </div>
       <div className={classes.contentContainer}>
         <Typography>
-          <a href={textJson.npm}>{textJson.npm}</a>
+          <a href={data.npm}>{data.npm}</a>
         </Typography>
       </div>
     </Grid>

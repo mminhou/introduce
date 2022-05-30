@@ -3,7 +3,8 @@ import * as THREE from 'three';
 import { useFrame } from '@react-three/fiber';
 import { Image, useScroll } from '@react-three/drei';
 import { useSnapshot } from 'valtio';
-import { state, damp } from './util';
+import { state, damp } from './proxy';
+import DetailViewButton from './DetailViewButton';
 
 interface ItemProps {
   index: number;
@@ -42,7 +43,12 @@ const Item = ({ index, position, scale, url, c = new THREE.Color() }: ItemProps)
     setHover(false);
   };
 
-  return <Image ref={ref} position={position} scale={scale} url={url} onClick={click} onPointerOver={over} onPointerOut={out} />;
+  return (
+    <>
+      <Image ref={ref} position={position} scale={scale} url={url.image} onClick={click} onPointerOver={over} onPointerOut={out} />
+      <DetailViewButton index={index} position={position} url={url} />
+    </>
+  );
 };
 
 export default Item;

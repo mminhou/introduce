@@ -2,7 +2,7 @@ import React from 'react';
 import { useThree } from '@react-three/fiber';
 import { ScrollControls, Scroll } from '@react-three/drei';
 import { useSnapshot } from 'valtio';
-import { state } from './util';
+import { state } from './proxy';
 import Minimap from './Minimap';
 import Item from './Item';
 
