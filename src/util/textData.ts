@@ -1,6 +1,16 @@
+import neostudio1 from '../assets/images/neostudio1.jpg';
+import neostudio2 from '../assets/images/neostudio2.jpg';
+import neostudio3 from '../assets/images/neostudio3.jpg';
+
+import pensdk1 from '../assets/images/pensdk1.jpg';
+import pensdk2 from '../assets/images/pensdk2.jpg';
+
+import gridaboard1 from '../assets/images/gridaboard1.jpg';
+import gridaboard2 from '../assets/images/gridaboard2.jpg';
+import gridaboard3 from '../assets/images/gridaboard3.jpg';
+
 import introduce from '../assets/images/introduce.jpg';
-import gridaboard from '../assets/images/gridaboard.jpg';
-import webPenSdk from '../assets/images/webPenSdk.jpg';
+import theSalt from '../assets/images/theSalt.jpg';
 
 let ko = {
   name: 'Minho Choi',
@@ -28,22 +38,22 @@ let ko = {
       caption: '디지털과 아날로그의 장점이 결합된 스마트펜 제조 및 서비스 세계 1위 기업.',
       project: [
         {
-          id: 'webNeoStudio',
+          id: 'neostudio',
           title: 'WebNeoStudio',
           url: 'https://app.neostudio.io/',
           period: '2022. 05. ~',
           skills: 'Typescript, ReactJS, React-router-dom, React-Redux, WebSocket',
           captions: ['자사 cloud 서비스와의 연동을 위한 Web socket client 및 UX 개발'],
-          images: [introduce, gridaboard, webPenSdk],
+          images: [neostudio1, neostudio2, neostudio3],
         },
         {
-          id: 'webPenSdk',
+          id: 'pensdk',
           title: 'WebPenSDK',
           url: 'https://github.com/neostudio-team/webPenSDK',
           period: '2022. 04. ~ 2022. 04.',
           skills: 'Typescript, ReactJS, React-router-dom, FabricJS, Webpack, Babel, Firebase, MaterialUI',
           captions: ['자사 스마트펜을 위한 오픈소스인 WebPenSDK 업데이트', 'PenSDK를 활용한 외부 공개용 샘플 페이지 작성', 'WebPenSDK guide document 작성'],
-          images: [introduce, gridaboard, webPenSdk],
+          images: [pensdk1, pensdk2],
         },
         {
           id: 'gridaboard',
@@ -52,7 +62,7 @@ let ko = {
           period: '2021. 12. ~ 2022. 03.',
           skills: 'Typescript, ReactJS, React-router-dom, React-Redux, FabricJS, Firebase, MaterialUI',
           captions: ['자사 블루투스 스마트펜을 위한 그래픽 서비스인 GridaBoard v2 업데이트', "‘펜 제스처' 기능 개발 및 인식 개선 알고리즘 작성", 'GridaBoard 각종 페이지 UX/UI 개선'],
-          images: [introduce, gridaboard, webPenSdk],
+          images: [gridaboard1, gridaboard2, gridaboard3],
         },
       ],
     },
@@ -63,17 +73,18 @@ let ko = {
       title: 'Introduce',
       url: 'https://mminhou.github.io/introduce/',
       period: '2021. 11. ~ ',
-      projectGithub: 'https://github.com/mminhou/introduce',
+      github: 'https://github.com/mminhou/introduce',
       caption: "MINHO CHOI's web developer portfolio site",
       skills: 'Typescript, ReactJS, React-router-dom, React-Redux, ThreeJS, Wabpack, Babel, ESlint, Prettier, MaterialUI',
       captions: ['Webpack, bable, eslint, prettier을 활용한 프로젝트 구성', 'Typescript, React Hook 기반으로 apllication 로직 작성', 'ThreeJS를 적용한 3D animation 효과 추가'],
+      images: [introduce],
     },
     {
       id: 'theSalt',
       title: 'The Salt',
       url: 'http://the-salt.co.uk/',
       period: '2021. 08. ~ 2021. 10.',
-      projectGithub: 'https://github.com/mminhou/thesalt',
+      github: 'https://github.com/mminhou/thesalt',
       caption: 'Django Rest API와 ReactJs, Redux-Saga를 적용한 쇼핑몰 사이트',
       skills: 'Python, DjangoRestFramework, Javascript, ReactJS, Redux-Saga, MaterialUI, AWS EC2, AWS S3',
       captions: [
@@ -82,6 +93,7 @@ let ko = {
         'device size 기반 responsible UI 구축',
         'AWS EC2/S3을 활용한 project deploy',
       ],
+      images: [theSalt],
     },
   ],
 };
