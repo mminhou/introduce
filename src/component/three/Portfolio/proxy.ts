@@ -3,13 +3,19 @@ import { proxy } from 'valtio';
 import theSalt from '../../../assets/images/theSalt.jpg';
 import introduce from '../../../assets/images/introduce.jpg';
 import gridaboard from '../../../assets/images/gridaboard.jpg';
-import webPenSdk from '../../../assets/images/webPenSdk.jpg';
+import pensdk from '../../../assets/images/pensdk.jpg';
+import neostudio from '../../../assets/images/neostudio.jpg';
 
 const projectList = [
   {
     companyId: 'neolab',
-    projectId: 'webPenSdk',
-    image: webPenSdk,
+    projectId: 'neostudio',
+    image: neostudio,
+  },
+  {
+    companyId: 'neolab',
+    projectId: 'pensdk',
+    image: pensdk,
   },
   {
     companyId: 'neolab',
