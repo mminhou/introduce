@@ -49,23 +49,23 @@ const ResumePersonalProject = () => {
         Personal Project.
       </Typography>
       <Divider className={classes.divider} />
-      {data.personal.map((person) => (
-        <Grid item container alignItems='center'>
+      {data.personal.map((project, idx) => (
+        <Grid item container alignItems='center' key={idx}>
           <Grid item xs={12}>
             <Typography variant='subtitle2' className={classes.subTitle2}>
-              {person.url ? <a href={person.url}>{person.title}</a> : `${person.title}`}
+              {project.url ? <a href={project.url}>{project.title}</a> : `${project.title}`}
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography variant='body2' className={classes.body2}>
-              {person.caption}
+              {project.caption}
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <div className={classes.iconTextContainer}>
               <GitHub className={classes.smallIcon} />
               <Typography variant='body2' className={classes.body2}>
-                <a href={person.projectGithub}>{person.projectGithub}</a>
+                <a href={project.github}>{project.github}</a>
               </Typography>
             </div>
           </Grid>
@@ -73,14 +73,14 @@ const ResumePersonalProject = () => {
             <div className={classes.iconTextContainer}>
               <BuildOutlined className={classes.smallIcon} />
               <Typography variant='caption' className={classes.caption}>
-                {person.skills}
+                {project.skills}
               </Typography>
             </div>
           </Grid>
           <Grid item xs={12}>
             <div className={classes.subContentContainer}>
-              {person.captions.map((caption) => (
-                <Typography variant='caption' className={classes.caption}>
+              {project.captions.map((caption) => (
+                <Typography variant='caption' className={classes.caption} key={caption}>
                   <ArrowRight /> {caption}
                 </Typography>
               ))}
