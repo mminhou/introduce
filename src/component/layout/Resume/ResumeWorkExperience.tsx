@@ -51,8 +51,8 @@ const ResumeWorkExperience = () => {
         Work Experience.
       </Typography>
       <Divider className={classes.divider} />
-      {data.company.map((comp) => (
-        <div>
+      {data.company.map((comp, idx) => (
+        <div key={idx}>
           <Grid item container alignItems='center'>
             <Grid item md={2} xs={12} className={classes.companyTitle}>
               <Typography variant='subtitle2' className={classes.subTitle2}>
@@ -74,8 +74,8 @@ const ResumeWorkExperience = () => {
                 {comp.caption}
               </Typography>
             </Grid>
-            {comp.project.map((proj) => (
-              <div style={{ width: '100%', margin: '20px 0px 0px 0px' }}>
+            {comp.project.map((proj, idx) => (
+              <div style={{ width: '100%', margin: '20px 0px 0px 0px' }} key={idx}>
                 <Grid item container>
                   <Grid item md={4} xs={12}>
                     <Typography className={classes.projectTitle}>
@@ -87,7 +87,7 @@ const ResumeWorkExperience = () => {
                   </Grid>
                   <Grid item md={8} xs={12}>
                     {proj.captions.map((caption) => (
-                      <Typography variant='caption' className={classes.caption}>
+                      <Typography variant='caption' className={classes.caption} key={caption}>
                         <ArrowRight /> {caption}
                       </Typography>
                     ))}
