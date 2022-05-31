@@ -24,8 +24,8 @@ const ResumeIntroduce = () => {
       </Typography>
       <div className={classes.subContentContainer}>
         <Typography variant='subtitle1'>
-          {data.introduce.split('\n').map((line) => (
-            <span>
+          {data.introduce.split('\n').map((line, idx) => (
+            <span key={idx}>
               {line}
               <br />
             </span>

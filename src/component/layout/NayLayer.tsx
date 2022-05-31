@@ -68,8 +68,8 @@ const NavLayer = () => {
       </List>
       <Divider />
       <List>
-        {navigations.map((navigation) => (
-          <ListItem onClick={toggleDrawer(false)} className={classes.listItem}>
+        {navigations.map((navigation, idx) => (
+          <ListItem onClick={toggleDrawer(false)} className={classes.listItem} key={idx}>
             <LinkButton title={navigation.title} to={navigation.to} _className={classes.drawerButton} />
           </ListItem>
         ))}
@@ -86,8 +86,8 @@ const NavLayer = () => {
   return (
     <div className={classes.navStyle}>
       <div className={classes.sectionDesktop}>
-        {navigations.map((navigation) => (
-          <LinkButton title={navigation.title} to={navigation.to} _className={classes.caption} />
+        {navigations.map((navigation, idx) => (
+          <LinkButton title={navigation.title} to={navigation.to} _className={classes.caption} key={idx} />
         ))}
       </div>
       <div className={classes.sectionMobile}>
