@@ -43,7 +43,7 @@ let ko = {
           url: 'https://app.neostudio.io/',
           period: '2022. 05. ~',
           skills: 'Typescript, ReactJS, React-router-dom, React-Redux, WebSocket',
-          captions: ['자사 cloud 서비스와의 연동을 위한 Web socket client 및 UX 개발'],
+          captions: ['자사 cloud 서비스와의 연동을 위한 web socket client 개발', 'Crop을 활용한 클립보드 copy 기능 개발', 'Web socket 관련 UX 개발', '다크모드, 다국어 작업'],
           images: [neostudio1, neostudio2, neostudio3],
         },
         {
