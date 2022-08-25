@@ -6,7 +6,7 @@ const useStyle = makeStyles((theme) => ({
   title: {
     fontWeight: 'bold',
     margin: '20px 0px 10px 0px',
-    color: '#104869',
+    color: '#0A9DAA',
   },
   subtitle: {
     marginRight: '20px',

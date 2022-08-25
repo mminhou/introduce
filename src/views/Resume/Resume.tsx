@@ -6,11 +6,17 @@ import ResumeEducation from './ResumeEducation';
 import ResumeOpenSource from './ResumeOpenSource';
 import ResumeWorkExperience from './ResumeWorkExperience';
 import ResumeHeader from './ResumeHeader';
-import ResumePersonalProject from './ResumePersonalProject';
+import ResumeProject from './ResumeProject';
 
 const useStyle = makeStyles((theme) => ({
   mainBackground: {
     width: '50%',
+    [theme.breakpoints.down('md')]: {
+      width: '70%',
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '90%',
+    },
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
@@ -33,7 +39,7 @@ const Resume = () => {
         <ResumeEducation />
         <ResumeOpenSource />
         <ResumeWorkExperience />
-        <ResumePersonalProject />
+        <ResumeProject />
       </Grid>
     </div>
   );
