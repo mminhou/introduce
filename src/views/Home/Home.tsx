@@ -1,24 +1,25 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import PortfolioCanvasContainer from '../component/three/Portfolio/PortfolioCanvasContainer';
+import CanvasContainer from '../../components/three/CanvasContainer';
 
 const useStyle = makeStyles((theme) => ({
   mainBackground: {
     width: '100%',
     height: '100%',
+    background: theme.palette.background.default,
     display: 'flex',
     flexDirection: 'column',
   },
 }));
 
-const Portfolio = () => {
+const Home = () => {
   const classes = useStyle();
 
   return (
     <div className={classes.mainBackground}>
-      <PortfolioCanvasContainer />
+      <CanvasContainer />
     </div>
   );
 };
 
-export default Portfolio;
+export default Home;

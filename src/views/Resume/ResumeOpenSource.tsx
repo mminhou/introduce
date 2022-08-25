@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, Grid, Typography } from '@material-ui/core';
-import ko from '../../../util/textData';
+import ko from '../../util/textData';
 
 const useStyle = makeStyles((theme) => ({
   title: {
@@ -8,32 +8,32 @@ const useStyle = makeStyles((theme) => ({
     margin: '20px 0px 10px 0px',
     color: '#104869',
   },
-  subContentContainer: {
+  contentContainer: {
     margin: '5px 0px',
   },
 }));
 
-const ResumeIntroduce = () => {
+const ResumeOpenSource = () => {
   const classes = useStyle();
   const data = ko;
 
   return (
-    <Grid item xs={12}>
+    <Grid item md={6} xs={12}>
       <Typography variant='h4' className={classes.title}>
-        Introduce.
+        Open Source.
       </Typography>
-      <div className={classes.subContentContainer}>
-        <Typography variant='subtitle1'>
-          {data.introduce.split('\n').map((line, idx) => (
-            <span key={idx}>
-              {line}
-              <br />
-            </span>
-          ))}
+      <div className={classes.contentContainer}>
+        <Typography>
+          <a href={data.github}>{data.github}</a>
+        </Typography>
+      </div>
+      <div className={classes.contentContainer}>
+        <Typography>
+          <a href={data.npm}>{data.npm}</a>
         </Typography>
       </div>
     </Grid>
   );
 };
 
-export default ResumeIntroduce;
+export default ResumeOpenSource;

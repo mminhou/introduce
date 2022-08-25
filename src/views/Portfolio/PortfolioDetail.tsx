@@ -2,7 +2,7 @@ import React from 'react';
 import { Divider, Grid, makeStyles, Typography } from '@material-ui/core';
 import { ArrowRight, DateRangeTwoTone, EditTwoTone, BuildTwoTone } from '@material-ui/icons';
 import { useParams } from 'react-router-dom';
-import ko from '../util/textData';
+import ko from '../../util/textData';
 
 const useStyle = makeStyles(() => ({
   mainBackground: {

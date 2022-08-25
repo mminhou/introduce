@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import LogoSvg from '../../assets/svg/shibainu.svg';
-import NavLayer from './NayLayer';
+import NavLayer from '../NavLayer/NayLayer';
 import { NavLink } from 'react-router-dom';
 
 const useStyle = makeStyles((theme) => ({

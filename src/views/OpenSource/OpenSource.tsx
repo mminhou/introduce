@@ -1,7 +1,7 @@
 import React from 'react';
 import { Avatar, Card, CardActions, CardContent, CardHeader, Divider, Grid, IconButton, makeStyles, Typography } from '@material-ui/core';
 import { Star } from '@material-ui/icons';
-import profile from '../assets/images/profile.jpg';
+import profile from '../../assets/images/profile.jpg';
 
 const useStyle = makeStyles((theme) => ({
   mainBackground: {

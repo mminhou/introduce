@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { makeStyles, Box, Divider, Drawer, IconButton, List, ListItem, Typography } from '@material-ui/core';
 import Menu from '@material-ui/icons/Menu';
-import LinkButton from '../LinkButton';
+import LinkButton from '../../components/buttons/LinkButton';
 import LogoSvg from '../../assets/svg/shibainu.svg';
 
 const useStyle = makeStyles((theme) => ({

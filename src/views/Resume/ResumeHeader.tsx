@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles, Grid, Typography } from '@material-ui/core';
 import { Email, Phone, GitHub } from '@material-ui/icons';
-import ko from '../../../util/textData';
+import ko from '../../util/textData';
 
 const useStyle = makeStyles((theme) => ({
   resumeName: {

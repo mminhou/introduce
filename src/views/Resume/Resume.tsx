@@ -1,11 +1,12 @@
 import React from 'react';
 import { Grid, makeStyles } from '@material-ui/core';
-import ResumeIntroduce from '../component/layout/Resume/ResumeIntroduce';
-import ResumeEducation from '../component/layout/Resume/ResumeEducation';
-import ResumeOpenSource from '../component/layout/Resume/ResumeOpenSource';
-import ResumeWorkExperience from '../component/layout/Resume/ResumeWorkExperience';
-import ResumeHeader from '../component/layout/Resume/ResumeHeader';
-import ResumePersonalProject from '../component/layout/Resume/ResumePersonalProject';
+
+import ResumeIntroduce from './ResumeIntroduce';
+import ResumeEducation from './ResumeEducation';
+import ResumeOpenSource from './ResumeOpenSource';
+import ResumeWorkExperience from './ResumeWorkExperience';
+import ResumeHeader from './ResumeHeader';
+import ResumePersonalProject from './ResumePersonalProject';
 
 const useStyle = makeStyles((theme) => ({
   mainBackground: {

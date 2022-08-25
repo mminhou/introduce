@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, Grid, Typography } from '@material-ui/core';
-import ko from '../../../util/textData';
+import ko from '../../util/textData';
 
 const useStyle = makeStyles((theme) => ({
   title: {
