@@ -1,5 +1,6 @@
 import React from 'react';
 import { makeStyles, Grid, Typography, Divider } from '@material-ui/core';
+import { ArrowRight, BuildOutlined, GitHub } from '@material-ui/icons';
 import ko from '../../util/textData';
 
 const useStyle = makeStyles((theme) => ({
@@ -22,50 +23,72 @@ const useStyle = makeStyles((theme) => ({
       padding: '10px 00px 10px 0px',
     },
   },
-  educationPeriod: {
+  projectTitle: {
+    fontSize: '25px',
+  },
+  projectPeriod: {
     fontSize: '24px',
     color: '#828282',
   },
-  educationTitle: {
-    fontSize: '25px',
-  },
-  educationDescription: {
+  projectPosition: {
     fontStyle: 'italic',
     fontSize: '17px',
     fontWeight: 300,
     color: '#808080',
     margin: '5px 0px 15px 0px',
   },
+  projectDescription: {
+    display: 'flex',
+    margin: '7px',
+    fontSize: '16px',
+    fontFamily: 'Noto Sans KR',
+    fontWeight: 400,
+    color: '#212529',
+  },
   divider: {
     margin: '10px 0px',
   },
 }));
 
-const ResumeEducation = () => {
+const ResumeProject = () => {
   const classes = useStyle();
   const data = ko;
 
   return (
     <Grid item xs={12}>
       <Typography variant='h4' className={classes.title}>
-        Education.
+        Project.
       </Typography>
       <Divider className={classes.divider} />
-      {data.education.map((edu, idx) => (
+      {data.project.map((pro, idx) => (
         <div key={idx}>
           <Grid item container>
             <Grid item lg={3} md={4} sm={12} xs={12} className={classes.leftContainer}>
-              <Typography variant='subtitle2' className={classes.educationPeriod}>
-                {edu.period}
+              <Typography variant='subtitle2' className={classes.projectPeriod}>
+                {pro.period}
               </Typography>
             </Grid>
             <Grid item lg={9} md={8} sm={12} xs={12} className={classes.rightContainer}>
-              <Typography variant='subtitle2' className={classes.educationTitle}>
-                {edu.name}
+              <Typography variant='subtitle2' className={classes.projectTitle}>
+                {pro.caption}
               </Typography>
-              <Typography variant='body2' className={classes.educationDescription}>
-                {edu.description}
+              <Typography variant='body2' className={classes.projectPosition}>
+                {pro.company}
               </Typography>
+
+              {pro.description.map((content, idx) => (
+                <Typography className={classes.projectDescription} key={idx}>
+                  <ArrowRight /> {content}
+                </Typography>
+              ))}
+              <Typography className={classes.projectDescription} key={idx}>
+                <ArrowRight /> <b>Skill Keywords</b>
+              </Typography>
+              <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                {pro.skills.map((skill, idx) => (
+                  <div style={{ color: '#ffffff', backgroundColor: '#6c757d', borderRadius: '3px', padding: '2px 3px', margin: '3px', fontSize: '13px' }}>{skill}</div>
+                ))}
+              </div>
             </Grid>
           </Grid>
           <Divider className={classes.divider} />
@@ -75,4 +98,4 @@ const ResumeEducation = () => {
   );
 };
 
-export default ResumeEducation;
+export default ResumeProject;

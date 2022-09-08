@@ -6,11 +6,20 @@ import ResumeEducation from './ResumeEducation';
 import ResumeOpenSource from './ResumeOpenSource';
 import ResumeWorkExperience from './ResumeWorkExperience';
 import ResumeHeader from './ResumeHeader';
-import ResumePersonalProject from './ResumePersonalProject';
+import ResumeProject from './ResumeProject';
 
 const useStyle = makeStyles((theme) => ({
   mainBackground: {
-    width: '50%',
+    minWidth: '1000px',
+    width: '45%',
+    [theme.breakpoints.down('md')]: {
+      minWidth: '880px',
+      width: '70%',
+    },
+    [theme.breakpoints.down('sm')]: {
+      minWidth: '90%',
+      width: '90%',
+    },
     height: '100%',
     display: 'flex',
     flexDirection: 'column',
@@ -30,10 +39,10 @@ const Resume = () => {
       <Grid container justifyContent='center' alignItems='center' spacing={3}>
         <ResumeHeader />
         <ResumeIntroduce />
+        <ResumeWorkExperience />
+        <ResumeProject />
         <ResumeEducation />
         <ResumeOpenSource />
-        <ResumeWorkExperience />
-        <ResumePersonalProject />
       </Grid>
     </div>
   );
