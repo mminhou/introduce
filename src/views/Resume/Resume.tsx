@@ -10,11 +10,14 @@ import ResumeProject from './ResumeProject';
 
 const useStyle = makeStyles((theme) => ({
   mainBackground: {
-    width: '50%',
+    minWidth: '1000px',
+    width: '45%',
     [theme.breakpoints.down('md')]: {
+      minWidth: '880px',
       width: '70%',
     },
     [theme.breakpoints.down('sm')]: {
+      minWidth: '90%',
       width: '90%',
     },
     height: '100%',
@@ -36,10 +39,10 @@ const Resume = () => {
       <Grid container justifyContent='center' alignItems='center' spacing={3}>
         <ResumeHeader />
         <ResumeIntroduce />
-        <ResumeEducation />
-        <ResumeOpenSource />
         <ResumeWorkExperience />
         <ResumeProject />
+        <ResumeEducation />
+        <ResumeOpenSource />
       </Grid>
     </div>
   );

@@ -23,19 +23,6 @@ const useStyle = makeStyles((theme) => ({
       padding: '10px 00px 10px 0px',
     },
   },
-  companyContainer: {
-    marginBottom: '10px',
-    paddingBottom: '10px',
-    borderBottom: '1px solid black',
-  },
-  projectContainer: {
-    display: 'flex',
-    margin: '20px',
-  },
-  companyTitleContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
   companyTitle: {
     fontSize: '25px',
   },
@@ -56,7 +43,6 @@ const useStyle = makeStyles((theme) => ({
     fontSize: '16px',
     fontFamily: 'Noto Sans KR',
     fontWeight: 400,
-    color: '#212529',
   },
   divider: {
     margin: '10px 0px',
@@ -76,12 +62,12 @@ const ResumeWorkExperience = () => {
       {data.company.map((comp, idx) => (
         <div key={idx}>
           <Grid item container>
-            <Grid item lg={3} md={4} sm={12} className={classes.leftContainer}>
+            <Grid item lg={3} md={4} sm={12} xs={12} className={classes.leftContainer}>
               <Typography variant='subtitle2' className={classes.companyPeriod}>
                 {comp.period}
               </Typography>
             </Grid>
-            <Grid item lg={9} md={8} sm={12} className={classes.rightContainer}>
+            <Grid item lg={9} md={8} sm={12} xs={12} className={classes.rightContainer}>
               <Typography variant='subtitle2' className={classes.companyTitle}>
                 {comp.homepage ? <a href={comp.homepage}>{comp.name}</a> : `${comp.name}`}
               </Typography>
@@ -90,7 +76,7 @@ const ResumeWorkExperience = () => {
               </Typography>
 
               {comp.description.map((content, idx) => (
-                <Typography className={classes.companyDescription} key={idx}>
+                <Typography variant='body1' className={classes.companyDescription} key={idx}>
                   <ArrowRight /> {content}
                 </Typography>
               ))}

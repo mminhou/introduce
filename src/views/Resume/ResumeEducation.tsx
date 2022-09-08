@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, Grid, Typography } from '@material-ui/core';
+import { makeStyles, Grid, Typography, Divider } from '@material-ui/core';
 import ko from '../../util/textData';
 
 const useStyle = makeStyles((theme) => ({
@@ -8,21 +8,36 @@ const useStyle = makeStyles((theme) => ({
     margin: '20px 0px 10px 0px',
     color: '#0A9DAA',
   },
-  subtitle: {
-    marginRight: '20px',
-    fontWeight: 'bold',
-    fontSize: '17px',
-  },
-  body2: {
-    display: 'inline',
-  },
-  contentContainer: {
+  leftContainer: {
     display: 'flex',
-    alignItems: 'center',
+    justifyContent: 'flex-end',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'flex-start',
+    },
   },
-  caption: {
+  rightContainer: {
+    padding: '0px 0px 0px 30px',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'flex-start',
+      padding: '10px 00px 10px 0px',
+    },
+  },
+  educationPeriod: {
+    fontSize: '24px',
+    color: '#828282',
+  },
+  educationTitle: {
+    fontSize: '25px',
+  },
+  educationDescription: {
+    fontStyle: 'italic',
+    fontSize: '17px',
+    fontWeight: 300,
+    color: '#808080',
+    margin: '5px 0px 15px 0px',
+  },
+  divider: {
     margin: '10px 0px',
-    fontSize: '15px',
   },
 }));
 
@@ -31,27 +46,31 @@ const ResumeEducation = () => {
   const data = ko;
 
   return (
-    <Grid item md={6} xs={12}>
+    <Grid item xs={12}>
       <Typography variant='h4' className={classes.title}>
         Education.
       </Typography>
-      <Grid item container alignItems='center' spacing={1}>
-        <Grid item md={4} xs={12}>
-          <Typography variant='subtitle2' className={classes.subtitle}>
-            {data.university.name}
-          </Typography>
-        </Grid>
-        <Grid item md={8} xs={12}>
-          <Typography variant='body2' className={classes.body2}>
-            {data.university.comment}
-          </Typography>
-        </Grid>
-      </Grid>
-      <div className={classes.contentContainer}>
-        <Typography variant='caption' className={classes.caption}>
-          BS. {data.university.major}
-        </Typography>
-      </div>
+      <Divider className={classes.divider} />
+      {data.education.map((edu, idx) => (
+        <div key={idx}>
+          <Grid item container>
+            <Grid item lg={3} md={4} sm={12} xs={12} className={classes.leftContainer}>
+              <Typography variant='subtitle2' className={classes.educationPeriod}>
+                {edu.period}
+              </Typography>
+            </Grid>
+            <Grid item lg={9} md={8} sm={12} xs={12} className={classes.rightContainer}>
+              <Typography variant='subtitle2' className={classes.educationTitle}>
+                {edu.name}
+              </Typography>
+              <Typography variant='body2' className={classes.educationDescription}>
+                {edu.description}
+              </Typography>
+            </Grid>
+          </Grid>
+          <Divider className={classes.divider} />
+        </div>
+      ))}
     </Grid>
   );
 };

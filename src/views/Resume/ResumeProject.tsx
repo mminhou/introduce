@@ -23,30 +23,21 @@ const useStyle = makeStyles((theme) => ({
       padding: '10px 00px 10px 0px',
     },
   },
-  projectContainer: {
-    marginBottom: '10px',
-    paddingBottom: '10px',
-    borderBottom: '1px solid black',
-  },
-  companyTitleContainer: {
-    display: 'flex',
-    justifyContent: 'space-between',
-  },
-  companyTitle: {
+  projectTitle: {
     fontSize: '25px',
   },
   projectPeriod: {
     fontSize: '24px',
     color: '#828282',
   },
-  companyPosition: {
+  projectPosition: {
     fontStyle: 'italic',
     fontSize: '17px',
     fontWeight: 300,
     color: '#808080',
     margin: '5px 0px 15px 0px',
   },
-  companyDescription: {
+  projectDescription: {
     display: 'flex',
     margin: '7px',
     fontSize: '16px',
@@ -56,28 +47,6 @@ const useStyle = makeStyles((theme) => ({
   },
   divider: {
     margin: '10px 0px',
-  },
-  subContentContainer: {
-    margin: '20px 0px',
-  },
-  iconTextContainer: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  subTitle2: {
-    fontWeight: 'bold',
-    fontSize: '17px',
-  },
-  body2: {
-    margin: '10px 0px',
-  },
-  caption: {
-    fontSize: '15px',
-    display: 'flex',
-  },
-  smallIcon: {
-    fontSize: '18px',
-    marginRight: '20px',
   },
 }));
 
@@ -94,25 +63,25 @@ const ResumeProject = () => {
       {data.project.map((pro, idx) => (
         <div key={idx}>
           <Grid item container>
-            <Grid item lg={3} md={4} sm={12} className={classes.leftContainer}>
+            <Grid item lg={3} md={4} sm={12} xs={12} className={classes.leftContainer}>
               <Typography variant='subtitle2' className={classes.projectPeriod}>
                 {pro.period}
               </Typography>
             </Grid>
-            <Grid item lg={9} md={8} sm={12} className={classes.rightContainer}>
-              <Typography variant='subtitle2' className={classes.companyTitle}>
+            <Grid item lg={9} md={8} sm={12} xs={12} className={classes.rightContainer}>
+              <Typography variant='subtitle2' className={classes.projectTitle}>
                 {pro.caption}
               </Typography>
-              <Typography variant='body2' className={classes.companyPosition}>
+              <Typography variant='body2' className={classes.projectPosition}>
                 {pro.company}
               </Typography>
 
               {pro.description.map((content, idx) => (
-                <Typography className={classes.companyDescription} key={idx}>
+                <Typography className={classes.projectDescription} key={idx}>
                   <ArrowRight /> {content}
                 </Typography>
               ))}
-              <Typography className={classes.companyDescription} key={idx}>
+              <Typography className={classes.projectDescription} key={idx}>
                 <ArrowRight /> <b>Skill Keywords</b>
               </Typography>
               <div style={{ display: 'flex', flexWrap: 'wrap' }}>
