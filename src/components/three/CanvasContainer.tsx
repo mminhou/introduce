@@ -7,6 +7,8 @@ import Light from './Light';
 import Loader from './Loader';
 import Text3d from './Text';
 import { theme } from '../../theme';
+import Model from './Model';
+import Model2 from './Model2';
 
 const useStyle = makeStyles(() => ({
   canvasContainer: {
@@ -19,13 +21,14 @@ const CanvasContainer = () => {
 
   return (
     <div className={classes.canvasContainer}>
-      <Canvas camera={{ position: [0, 0, 100], up: [0, 1, 0] }}>
+      <Canvas camera={{ position: [0, 0, 100], up: [0, 1, 0], aspect: 5 }}>
         <fog attach='fog' args={['black', 25, 40]} />
         <color attach='background' args={[theme.palette.background.default]} />
         <Suspense fallback={<Loader />}>
           <OrbitControls />
+          <Model2 />
           <Light />
-          <Text3d position={[0, 0, 0]} text={"I'm Mminhou"} isRotate={false} />
+          {/* <Text3d position={[0, 0, 0]} text={"I'm Mminhou"} isRotate={false} />
           <Text3d position={[420, -50, -300]} text={'Minho'} isRotate={true} />
           <Text3d position={[250, 200, -300]} text={'Front-End'} isRotate={true} />
           <Text3d position={[50, 230, -300]} text={'Full-Stack'} isRotate={true} />
@@ -37,7 +40,7 @@ const CanvasContainer = () => {
           <Text3d position={[-400, -100, -300]} text={'ReactJS'} isRotate={true} />
           <Text3d position={[-100, 240, -300]} text={'Redux'} isRotate={true} />
           <Text3d position={[400, 100, -300]} text={'AWS'} isRotate={true} />
-          <Text3d position={[-250, -200, -300]} text={'Firebase'} isRotate={true} />
+          <Text3d position={[-250, -200, -300]} text={'Firebase'} isRotate={true} /> */}
         </Suspense>
       </Canvas>
     </div>

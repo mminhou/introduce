@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import * as THREE from 'three';
 import { extend, useFrame } from '@react-three/fiber';
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader';
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry';
@@ -16,10 +17,13 @@ const Text3d = ({ position, text, isRotate }: Text3Props) => {
   const mesh = useRef(null);
   const rotationDegree = isRotate ? Math.random() * 0.01 : 0;
 
+  const clock = new THREE.Clock();
+  const time = clock.getDelta();
+
   useFrame(() => {
-    mesh.current.rotation.x += rotationDegree;
-    mesh.current.rotation.y += rotationDegree;
-    mesh.current.rotation.z += rotationDegree;
+    mesh.current.rotation.x = time;
+    mesh.current.rotation.y = time;
+    mesh.current.rotation.z = time;
     mesh.current.geometry.center();
   });
 

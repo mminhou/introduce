@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --host 0.0.0.0 --config ./webpack.config.js",
+    "dev": "webpack-dev-server --host 0.0.0.0ㅇ --config ./webpack.config.js",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --hot",
     "deploy": "cp dist/index.html dist/404.html && gh-pages -d dist"
@@ -66,7 +66,7 @@
     "@react-three/drei": "^8.6.3",
     "@react-three/fiber": "^7.0.27",
     "convert-excel-to-json": "^1.7.0",
-    "gsap": "^3.9.1",
+    "g": "^3.9.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-redux": "^7.2.6",
