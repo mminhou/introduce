@@ -16,7 +16,7 @@ const useStyle = makeStyles(() => ({
   },
 }));
 
-const CanvasContainer = () => {
+const HomeCanvasContainer = () => {
   const classes = useStyle();
 
   return (
@@ -47,4 +47,4 @@ const CanvasContainer = () => {
   );
 };
 
-export default CanvasContainer;
+export default HomeCanvasContainer;

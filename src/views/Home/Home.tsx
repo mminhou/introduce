@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
-import CanvasContainer from '../../components/three/CanvasContainer';
+import HomeCanvasContainer from '../../components/three/HomeCanvasContainer';
 
 const useStyle = makeStyles((theme) => ({
   mainBackground: {
@@ -17,7 +17,7 @@ const Home = () => {
 
   return (
     <div className={classes.mainBackground}>
-      <CanvasContainer />
+      <HomeCanvasContainer />
     </div>
   );
 };
