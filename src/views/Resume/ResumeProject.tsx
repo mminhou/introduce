@@ -33,7 +33,7 @@ const useStyle = makeStyles((theme) => ({
   projectPosition: {
     fontStyle: 'italic',
     fontSize: '17px',
-    fontWeight: 300,
+    fontWeight: 400,
     color: '#808080',
     margin: '5px 0px 15px 0px',
   },
@@ -81,14 +81,6 @@ const ResumeProject = () => {
                   <ArrowRight /> {content}
                 </Typography>
               ))}
-              <Typography className={classes.projectDescription} key={idx}>
-                <ArrowRight /> <b>Skill Keywords</b>
-              </Typography>
-              <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-                {pro.skills.map((skill, idx) => (
-                  <div style={{ color: '#ffffff', backgroundColor: '#6c757d', borderRadius: '3px', padding: '2px 3px', margin: '3px', fontSize: '13px' }}>{skill}</div>
-                ))}
-              </div>
             </Grid>
           </Grid>
           <Divider className={classes.divider} />

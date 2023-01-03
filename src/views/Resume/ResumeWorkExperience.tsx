@@ -11,9 +11,12 @@ const useStyle = makeStyles((theme) => ({
   },
   leftContainer: {
     display: 'flex',
-    justifyContent: 'flex-end',
+    flexDirection: 'column',
+    alignItems: 'flex-end',
+    // justifyContent: 'flex-end',
     [theme.breakpoints.down('sm')]: {
-      justifyContent: 'flex-start',
+      flexDirection: 'row',
+      alignItems: 'center',
     },
   },
   rightContainer: {
@@ -33,7 +36,7 @@ const useStyle = makeStyles((theme) => ({
   companyPosition: {
     fontStyle: 'italic',
     fontSize: '17px',
-    fontWeight: 300,
+    fontWeight: 400,
     color: '#808080',
     margin: '5px 0px 15px 0px',
   },
@@ -66,6 +69,7 @@ const ResumeWorkExperience = () => {
               <Typography variant='subtitle2' className={classes.companyPeriod}>
                 {comp.period}
               </Typography>
+              <div style={{ color: '#ffffff', backgroundColor: '#e98428', borderRadius: '3px', padding: '2px 3px', margin: '3px 3px 3px 10px', fontSize: '13px' }}>{comp.tenure}</div>
             </Grid>
             <Grid item lg={9} md={8} sm={12} xs={12} className={classes.rightContainer}>
               <Typography variant='subtitle2' className={classes.companyTitle}>
@@ -80,6 +84,14 @@ const ResumeWorkExperience = () => {
                   <ArrowRight /> {content}
                 </Typography>
               ))}
+              <Typography className={classes.companyDescription} key={idx}>
+                <ArrowRight /> <b>Skill Keywords</b>
+              </Typography>
+              <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+                {comp.skills.map((skill, idx) => (
+                  <div style={{ color: '#ffffff', backgroundColor: '#6c757d', borderRadius: '3px', padding: '2px 3px', margin: '3px', fontSize: '13px' }}>{skill}</div>
+                ))}
+              </div>
             </Grid>
           </Grid>
           <Divider className={classes.divider} />

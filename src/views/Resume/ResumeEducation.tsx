@@ -32,7 +32,7 @@ const useStyle = makeStyles((theme) => ({
   educationDescription: {
     fontStyle: 'italic',
     fontSize: '17px',
-    fontWeight: 300,
+    fontWeight: 400,
     color: '#808080',
     margin: '5px 0px 15px 0px',
   },
