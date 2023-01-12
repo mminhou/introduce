@@ -26,7 +26,7 @@ let ko = {
     {
       name: '상명대학교',
       period: '2014. 3 ~ 2021. 8',
-      description: '컴퓨터과학전공 학사 졸업',
+      description: '컴퓨터과학전공 학사 졸업 (서울특별시 종로구)',
     },
     {
       name: '청량고등학교',
@@ -109,9 +109,9 @@ let ko = {
       url: 'https://github.com/neostudio-team/webPenSDK',
       period: '2022. 04 ~ 2022. 05',
       github: '',
-      caption: '스마트펜 서비스를 위한 오픈소스 WebPenSDK 업데이트',
+      caption: '스마트펜 사용을 위한 오픈소스 WebPenSDK 업데이트',
       skills: ['Typescript', 'ReactJS', 'React-router-dom', 'FabricJS', 'Webpack', 'Babel', 'Firebase', 'MaterialUI'],
-      description: ['펜 설정 관련 로직 수정 및 라이브러리 배리', 'PenSDK를 활용한 외부 공개용 샘플 페이지 개발', 'WebPenSDK guide document 작성'],
+      description: ['네오랩 스마트펜 설정 관련 로직 수정 및 라이브러리 배포', 'WebPenSDK를 활용한 외부 공개용 샘플 페이지 개발', 'WebPenSDK guide document 작성'],
       images: [pensdk1, pensdk2],
     },
     {
@@ -123,7 +123,7 @@ let ko = {
       github: '',
       caption: '제품 런칭에 따른 그래픽 서비스 GridaBoard v2 업데이트',
       skills: ['Typescript', 'ReactJS', 'Redux', 'React-router-dom', 'FabricJS', 'Firebase', 'MaterialUI'],
-      description: ['스마트 플레이트를 사용하기 위한 GridaBoard v2 업데이트', "‘펜 제스처' 기능 개발 및 인식 개선 알고리즘 작성", 'GridaBoard 내 각종 페이지 UX/UI 개선'],
+      description: ["‘제품 런칭에 따른 펜 제스처' 기능 개발 및 인식 개선 알고리즘 작성", 'GridaBoard 서비스 내 각종 페이지 UX/UI 개선'],
       images: [gridaboard1, gridaboard2, gridaboard3],
     },
     // {
