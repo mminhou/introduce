@@ -17,13 +17,8 @@ const Text3d = ({ position, text, isRotate }: Text3Props) => {
   const mesh = useRef(null);
   const rotationDegree = isRotate ? Math.random() * 0.01 : 0;
 
-  const clock = new THREE.Clock();
-  const time = clock.getDelta();
-
   useFrame(() => {
-    mesh.current.rotation.x = time;
-    mesh.current.rotation.y = time;
-    mesh.current.rotation.z = time;
+    mesh.current.rotation.y += rotationDegree;
     mesh.current.geometry.center();
   });
 

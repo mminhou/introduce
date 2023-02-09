@@ -57,11 +57,11 @@ const OpenSource = () => {
           <Divider className={classes.divider} />
           <CardActions className={classes.actionContent}>
             <Typography variant='body2' className={classes.actionStar}>
-              0 <br />
+              1 <br />
               <span className={classes.actionTitle}>STARS</span>
             </Typography>
             <Typography variant='body2'>
-              0 <br />
+              1 <br />
               <span className={classes.actionTitle}>FORKS</span>
             </Typography>
           </CardActions>

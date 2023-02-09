@@ -22,16 +22,6 @@ const projectList = [
     projectId: 'gridaboard',
     image: gridaboard,
   },
-  {
-    companyId: 'personal',
-    projectId: 'introduce',
-    image: introduce,
-  },
-  {
-    companyId: 'personal',
-    projectId: 'theSalt',
-    image: theSalt,
-  },
 ];
 
 export const damp = THREE.MathUtils.damp;
