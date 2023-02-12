@@ -9,13 +9,6 @@ const CustomRouter = ({ history, ...props }) => {
 
   useLayoutEffect(() => history.listen(setState), [history]);
 
-  return (
-    <Router
-      {...props}
-      location={state.location}
-      navigationType={state.action}
-      navigator={history}
-    />
-  );
+  return <Router {...props} location={state.location} navigationType={state.action} navigator={history} />;
 };
 export default CustomRouter;

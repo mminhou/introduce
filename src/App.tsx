@@ -3,12 +3,12 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import rootStore, { RootStore } from './store/configureStore';
 import { AppBar } from '@material-ui/core';
-import Home from './pages/Home';
-import Portfolio from './pages/Portfolio';
-import OpenSource from './pages/OpenSource';
-import Resume from './pages/Resume';
-import Header from './component/layout/Header';
-import PortfolioDetail from './pages/PortfolioDetail';
+import Home from './views/Home/Home';
+import Portfolio from './views/Portfolio/Portfolio';
+import OpenSource from './views/OpenSource/OpenSource';
+import Resume from './views/Resume/Resume';
+import Header from './views/Header/Header';
+import PortfolioDetail from './views/Portfolio/PortfolioDetail';
 
 const store: RootStore = rootStore();
 
