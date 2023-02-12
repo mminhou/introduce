@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --host 0.0.0.0ㅇ --config ./webpack.config.js",
+    "dev": "webpack-dev-server --host 0.0.0.0 --config ./webpack.config.js",
     "build": "webpack --mode production",
     "start": "webpack-dev-server --mode development --hot",
     "deploy": "cp dist/index.html dist/404.html && gh-pages -d dist"
